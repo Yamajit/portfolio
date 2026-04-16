@@ -1,0 +1,350 @@
+/* ============================================================
+   GAMEZONE — Games Page Styles
+   ============================================================ */
+
+/* ── Category Badge Colors ───────────────────────────────── */
+.card-badge.runner {
+    background: rgba(0, 212, 255, 0.18);
+    color: #00d4ff;
+    border: 1px solid rgba(0, 212, 255, 0.45);
+}
+
+.card-badge.action {
+    background: rgba(255, 102, 0, 0.18);
+    color: #ff7700;
+    border: 1px solid rgba(255, 102, 0, 0.45);
+}
+
+.card-badge.skill {
+    background: rgba(204, 0, 255, 0.18);
+    color: #cc00ff;
+    border: 1px solid rgba(204, 0, 255, 0.45);
+}
+
+.card-badge.arcade {
+    background: rgba(255, 0, 136, 0.18);
+    color: #ff0088;
+    border: 1px solid rgba(255, 0, 136, 0.45);
+}
+
+.card-badge.puzzle {
+    background: rgba(148, 0, 211, 0.18);
+    color: #b044ff;
+    border: 1px solid rgba(148, 0, 211, 0.45);
+}
+
+.card-badge.sports {
+    background: rgba(0, 255, 136, 0.18);
+    color: #00ff88;
+    border: 1px solid rgba(0, 255, 136, 0.45);
+}
+
+.card-badge.cards {
+    background: rgba(204, 0, 255, 0.18);
+    color: #dd66ff;
+    border: 1px solid rgba(204, 0, 255, 0.45);
+}
+
+
+/* ── NEW Badge ───────────────────────────────────────────── */
+.card-badge-new {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    background: linear-gradient(135deg, #cc00ff, #ff0088);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    animation: newBadgePulse 2s ease-in-out infinite;
+    z-index: 2;
+    box-shadow: 0 0 12px rgba(204, 0, 255, 0.6);
+}
+
+@keyframes newBadgePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 10px rgba(204, 0, 255, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 0 22px rgba(255, 0, 136, 0.9);
+    }
+}
+
+/* ── Keyboard hint chip in card-meta ────────────────────── */
+.meta-keys {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 2px 7px;
+    font-family: 'Courier Prime', monospace;
+}
+
+/* ── New game card shimmer border ───────────────────────── */
+.game-card--new {
+    position: relative;
+}
+
+.game-card--new::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(204, 0, 255, 0.45), rgba(0, 212, 255, 0.25), rgba(255, 0, 136, 0.35));
+    z-index: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+}
+
+.game-card--new:hover::before {
+    opacity: 1;
+}
+
+/* ── Category Section Dividers ───────────────────────────── */
+.cat-section {
+    margin-bottom: 18px;
+}
+
+.cat-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    margin-top: 12px;
+}
+
+.cat-header__icon {
+    font-size: 1.6rem;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4));
+}
+
+.cat-header__title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    margin: 0;
+}
+
+.cat-header__line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(204, 0, 255, 0.4) 0%, rgba(0, 212, 255, 0.15) 40%, transparent 100%);
+}
+
+.cat-header__count {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--text-muted, #666);
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* ── HOW TO PLAY Pause Panel ─────────────────────────────── */
+.howto-panel {
+    position: absolute;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(4px);
+    animation: htFadeIn 0.22s ease;
+}
+
+.howto-panel.hidden {
+    display: none;
+}
+
+@keyframes htFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.howto-inner {
+    background: linear-gradient(135deg, rgba(20, 20, 50, 0.97), rgba(10, 10, 30, 0.97));
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    border-radius: 16px;
+    padding: 32px 36px 28px;
+    max-width: 440px;
+    width: 90%;
+    box-shadow: 0 0 40px rgba(0, 120, 255, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+    position: relative;
+    animation: htSlideUp 0.26s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes htSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.howto-close-btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 70, 70, 0.18);
+    border: 1px solid rgba(255, 70, 70, 0.5);
+    color: #ff7070;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.18s ease;
+    line-height: 1;
+}
+
+.howto-close-btn:hover {
+    background: rgba(255, 70, 70, 0.45);
+    color: #fff;
+    transform: scale(1.12);
+}
+
+.howto-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #00d4ff;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+}
+
+.howto-brief {
+    font-size: 0.85rem;
+    color: rgba(200, 220, 255, 0.8);
+    line-height: 1.5;
+    margin-bottom: 18px;
+    border-left: 3px solid rgba(0, 212, 255, 0.4);
+    padding-left: 12px;
+}
+
+.howto-section {
+    margin-bottom: 16px;
+}
+
+.howto-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: #ffe066;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.howto-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.howto-list li {
+    font-size: 0.83rem;
+    color: rgba(200, 220, 255, 0.85);
+    padding-left: 16px;
+    position: relative;
+}
+
+.howto-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #00ff88;
+}
+
+.howto-controls-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.howto-key {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.82rem;
+}
+
+.hk-key {
+    background: rgba(0, 212, 255, 0.15);
+    border: 1px solid rgba(0, 212, 255, 0.35);
+    color: #00d4ff;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+    min-width: 80px;
+    text-align: center;
+}
+
+.hk-sep {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.8rem;
+}
+
+.hk-act {
+    color: rgba(200, 220, 255, 0.8);
+}
+
+.howto-tip {
+    margin-top: 20px;
+    font-size: 0.78rem;
+    color: #00ff88;
+    text-align: center;
+    padding: 8px 14px;
+    border-radius: 8px;
+    background: rgba(0, 255, 136, 0.08);
+    border: 1px solid rgba(0, 255, 136, 0.22);
+    animation: tipPulse 2s ease-in-out infinite;
+}
+
+@keyframes tipPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}

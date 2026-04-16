@@ -1,0 +1,814 @@
+/* ============================================================
+   GAMEZONE — Intro Cinematic Animation
+   ============================================================ */
+
+/* Intro Overlay */
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: #030308;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.intro-overlay.fade-out {
+    animation: introFadeOut 1.5s ease forwards;
+}
+
+@keyframes introFadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+/* Skip Button */
+.skip-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100001;
+    padding: 12px 24px;
+    background: rgba(255, 0, 60, 0.1);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    text-transform: uppercase;
+    box-shadow: 0 0 10px rgba(255, 0, 60, 0.2);
+}
+
+.skip-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Scene Base */
+.intro-scene {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+}
+
+.intro-scene.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.scene-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.scene-text {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.7rem, 2vw, 1rem);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    text-align: center;
+    max-width: 700px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: textFadeIn 1s ease 0.8s forwards;
+    text-shadow: 0 0 5px rgba(57, 255, 20, 0.3);
+}
+
+.glow-text {
+    color: var(--color-primary);
+    font-weight: 400;
+    text-shadow: 0 0 10px rgba(255, 0, 60, 0.8), 0 0 20px rgba(255, 0, 60, 0.4);
+    font-style: normal;
+}
+
+@keyframes textFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============ SCENE 1: The Child ============ */
+.pixel-child {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.child-body {
+    width: 60px;
+    height: 90px;
+    background: linear-gradient(180deg, #4a4a6a 0%, #2a2a4a 100%);
+    border-radius: 30px 30px 10px 10px;
+    position: relative;
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.2);
+    animation: childIdle 2s ease-in-out infinite;
+}
+
+.child-body::before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: #5a5a7a;
+    border-radius: 50%;
+}
+
+.child-body::after {
+    content: '●  ●';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #06b6d4;
+    font-size: 8px;
+    letter-spacing: 6px;
+    text-shadow: 0 0 10px #06b6d4;
+}
+
+@keyframes childIdle {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.controller-glow {
+    width: 40px;
+    height: 20px;
+    background: #7c3aed;
+    border-radius: 8px;
+    margin-top: 5px;
+    box-shadow: 0 0 20px #7c3aed, 0 0 40px rgba(124, 58, 237, 0.3);
+    animation: controllerPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes controllerPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 20px #7c3aed, 0 0 40px rgba(124, 58, 237, 0.3);
+    }
+
+    50% {
+        box-shadow: 0 0 30px #7c3aed, 0 0 60px rgba(124, 58, 237, 0.5), 0 0 100px rgba(124, 58, 237, 0.2);
+    }
+}
+
+/* Floating Pixels */
+.floating-pixels {
+    position: absolute;
+    inset: -100px;
+}
+
+.floating-pixels span {
+    position: absolute;
+    display: block;
+    width: 6px;
+    height: 6px;
+    background: #7c3aed;
+    opacity: 0;
+    animation: pixelFloat 4s linear infinite;
+}
+
+.floating-pixels span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    background: #7c3aed;
+}
+
+.floating-pixels span:nth-child(2) {
+    left: 25%;
+    animation-delay: 0.3s;
+    background: #06b6d4;
+}
+
+.floating-pixels span:nth-child(3) {
+    left: 40%;
+    animation-delay: 0.6s;
+    background: #a78bfa;
+}
+
+.floating-pixels span:nth-child(4) {
+    left: 55%;
+    animation-delay: 0.9s;
+    background: #22d3ee;
+}
+
+.floating-pixels span:nth-child(5) {
+    left: 70%;
+    animation-delay: 1.2s;
+    background: #7c3aed;
+}
+
+.floating-pixels span:nth-child(6) {
+    left: 85%;
+    animation-delay: 1.5s;
+    background: #06b6d4;
+}
+
+.floating-pixels span:nth-child(7) {
+    left: 15%;
+    animation-delay: 1.8s;
+    background: #a78bfa;
+}
+
+.floating-pixels span:nth-child(8) {
+    left: 45%;
+    animation-delay: 2.1s;
+    background: #22d3ee;
+}
+
+.floating-pixels span:nth-child(9) {
+    left: 65%;
+    animation-delay: 2.4s;
+    background: #7c3aed;
+}
+
+.floating-pixels span:nth-child(10) {
+    left: 80%;
+    animation-delay: 2.7s;
+    background: #06b6d4;
+}
+
+@keyframes pixelFloat {
+    0% {
+        top: 100%;
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    20% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        top: -10%;
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+/* ============ SCENE 2: The Journey ============ */
+.era-timeline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.era {
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.7rem;
+    letter-spacing: 1px;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: eraAppear 0.6s ease forwards;
+}
+
+.era-8bit {
+    background: rgba(124, 58, 237, 0.2);
+    border: 1px solid #7c3aed;
+    color: #a78bfa;
+    animation-delay: 0.3s;
+}
+
+.era-16bit {
+    background: rgba(6, 182, 212, 0.2);
+    border: 1px solid #06b6d4;
+    color: #22d3ee;
+    animation-delay: 0.9s;
+}
+
+.era-modern {
+    background: rgba(245, 158, 11, 0.2);
+    border: 1px solid #f59e0b;
+    color: #fbbf24;
+    animation-delay: 1.5s;
+}
+
+.era-future {
+    background: rgba(239, 68, 68, 0.2);
+    border: 1px solid #ef4444;
+    color: #f87171;
+    animation-delay: 2.1s;
+    font-size: 1.2rem;
+}
+
+.era-arrow {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2rem;
+    opacity: 0;
+    animation: arrowFade 0.4s ease forwards;
+}
+
+.era-arrow:nth-of-type(1) {
+    animation-delay: 0.6s;
+}
+
+.era-arrow:nth-of-type(2) {
+    animation-delay: 1.2s;
+}
+
+.era-arrow:nth-of-type(3) {
+    animation-delay: 1.8s;
+}
+
+@keyframes eraAppear {
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes arrowFade {
+    to {
+        opacity: 1;
+    }
+}
+
+.growing-figure {
+    margin-top: 20px;
+}
+
+.figure-silhouette {
+    width: 50px;
+    height: 80px;
+    background: linear-gradient(180deg, #7c3aed 0%, #06b6d4 100%);
+    clip-path: polygon(50% 0%, 65% 25%, 80% 35%, 70% 60%, 75% 100%, 50% 90%, 25% 100%, 30% 60%, 20% 35%, 35% 25%);
+    animation: figureGrow 3s ease forwards;
+    filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
+}
+
+@keyframes figureGrow {
+    0% {
+        transform: scale(0.5);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 1;
+    }
+}
+
+/* ============ SCENE 3: The Overlord ============ */
+.overlord-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.overlord-crown {
+    font-size: 3rem;
+    animation: crownFloat 2s ease-in-out infinite, crownAppear 1s ease 0.5s both;
+    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.6));
+}
+
+@keyframes crownFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes crownAppear {
+    from {
+        opacity: 0;
+        transform: translateY(-40px) scale(0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.overlord-figure {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlord-silhouette {
+    width: 80px;
+    height: 130px;
+    background: linear-gradient(180deg, #7c3aed 0%, #4c1d95 50%, #1e1b4b 100%);
+    clip-path: polygon(50% 0%, 70% 15%, 100% 35%, 85% 55%, 90% 75%, 70% 100%, 30% 100%, 10% 75%, 15% 55%, 0% 35%, 30% 15%);
+    animation: overlordPulse 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.6));
+}
+
+@keyframes overlordPulse {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 30px rgba(124, 58, 237, 0.6));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 60px rgba(124, 58, 237, 0.9)) drop-shadow(0 0 100px rgba(6, 182, 212, 0.3));
+    }
+}
+
+.overlord-glow {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+    animation: glowPulse 2s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
+
+/* Power Particles */
+.power-particles {
+    position: absolute;
+    inset: -150px;
+    pointer-events: none;
+}
+
+.power-particles span {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    opacity: 0;
+    animation: powerParticle 3s linear infinite;
+}
+
+.power-particles span:nth-child(odd) {
+    background: #7c3aed;
+}
+
+.power-particles span:nth-child(even) {
+    background: #06b6d4;
+}
+
+.power-particles span:nth-child(1) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0s;
+}
+
+.power-particles span:nth-child(2) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.15s;
+}
+
+.power-particles span:nth-child(3) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.3s;
+}
+
+.power-particles span:nth-child(4) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.45s;
+}
+
+.power-particles span:nth-child(5) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.6s;
+}
+
+.power-particles span:nth-child(6) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.75s;
+}
+
+.power-particles span:nth-child(7) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 0.9s;
+}
+
+.power-particles span:nth-child(8) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.05s;
+}
+
+.power-particles span:nth-child(9) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.2s;
+}
+
+.power-particles span:nth-child(10) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.35s;
+}
+
+.power-particles span:nth-child(11) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.5s;
+}
+
+.power-particles span:nth-child(12) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.65s;
+}
+
+.power-particles span:nth-child(13) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.8s;
+}
+
+.power-particles span:nth-child(14) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 1.95s;
+}
+
+.power-particles span:nth-child(15) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.1s;
+}
+
+.power-particles span:nth-child(16) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.25s;
+}
+
+.power-particles span:nth-child(17) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.4s;
+}
+
+.power-particles span:nth-child(18) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.55s;
+}
+
+.power-particles span:nth-child(19) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.7s;
+}
+
+.power-particles span:nth-child(20) {
+    left: 50%;
+    top: 50%;
+    animation-delay: 2.85s;
+}
+
+@keyframes powerParticle {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate(calc((var(--rand-x, 1)) * 150px),
+                calc((var(--rand-y, 1)) * 150px)) scale(0);
+    }
+}
+
+.power-particles span:nth-child(1) {
+    --rand-x: 0.8;
+    --rand-y: -0.6;
+}
+
+.power-particles span:nth-child(2) {
+    --rand-x: -0.5;
+    --rand-y: -0.9;
+}
+
+.power-particles span:nth-child(3) {
+    --rand-x: 0.9;
+    --rand-y: 0.4;
+}
+
+.power-particles span:nth-child(4) {
+    --rand-x: -0.7;
+    --rand-y: 0.7;
+}
+
+.power-particles span:nth-child(5) {
+    --rand-x: 0.3;
+    --rand-y: -1.0;
+}
+
+.power-particles span:nth-child(6) {
+    --rand-x: -1.0;
+    --rand-y: -0.3;
+}
+
+.power-particles span:nth-child(7) {
+    --rand-x: 0.6;
+    --rand-y: 0.9;
+}
+
+.power-particles span:nth-child(8) {
+    --rand-x: -0.4;
+    --rand-y: 0.5;
+}
+
+.power-particles span:nth-child(9) {
+    --rand-x: 1.0;
+    --rand-y: 0.1;
+}
+
+.power-particles span:nth-child(10) {
+    --rand-x: -0.8;
+    --rand-y: -0.8;
+}
+
+.power-particles span:nth-child(11) {
+    --rand-x: 0.2;
+    --rand-y: 1.0;
+}
+
+.power-particles span:nth-child(12) {
+    --rand-x: -0.9;
+    --rand-y: 0.2;
+}
+
+.power-particles span:nth-child(13) {
+    --rand-x: 0.7;
+    --rand-y: -0.7;
+}
+
+.power-particles span:nth-child(14) {
+    --rand-x: -0.3;
+    --rand-y: -0.5;
+}
+
+.power-particles span:nth-child(15) {
+    --rand-x: 0.5;
+    --rand-y: 0.6;
+}
+
+.power-particles span:nth-child(16) {
+    --rand-x: -0.6;
+    --rand-y: 1.0;
+}
+
+.power-particles span:nth-child(17) {
+    --rand-x: 1.0;
+    --rand-y: -0.4;
+}
+
+.power-particles span:nth-child(18) {
+    --rand-x: -1.0;
+    --rand-y: 0.6;
+}
+
+.power-particles span:nth-child(19) {
+    --rand-x: 0.4;
+    --rand-y: -0.8;
+}
+
+.power-particles span:nth-child(20) {
+    --rand-x: -0.2;
+    --rand-y: 0.3;
+}
+
+/* ============ SCENE FINAL: Logo Reveal ============ */
+.logo-reveal {
+    text-align: center;
+    opacity: 0;
+    transform: scale(0.5);
+    animation: logoReveal 1.5s ease 0.3s forwards;
+}
+
+@keyframes logoReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+        filter: blur(20px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.1);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+}
+
+.site-logo-intro {
+    font-family: 'Black Ops One', cursive;
+    font-size: clamp(3rem, 10vw, 7rem);
+    font-weight: 400;
+    color: #fff;
+    letter-spacing: 4px;
+    text-shadow:
+        0 0 20px rgba(255, 0, 60, 0.5),
+        0 0 60px rgba(255, 0, 60, 0.3),
+        0 0 100px rgba(255, 0, 60, 0.1);
+    text-transform: uppercase;
+}
+
+.site-logo-intro span {
+    color: var(--color-primary);
+    text-shadow:
+        0 0 20px rgba(255, 0, 60, 0.8),
+        0 0 60px rgba(255, 0, 60, 0.5),
+        0 0 120px rgba(255, 0, 60, 0.3);
+}
+
+.tagline-intro {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(0.9rem, 2.5vw, 1.4rem);
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    opacity: 0;
+    animation: tagFadeIn 1s ease 1.2s forwards;
+}
+
+@keyframes tagFadeIn {
+    to {
+        opacity: 1;
+    }
+}

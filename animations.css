@@ -1,0 +1,926 @@
+/* ==========================================
+   ADVANCED ANIMATIONS & MICRO-INTERACTIONS
+   ========================================== */
+
+/* ---- Staggered Reveal for Grids ---- */
+.reveal-section.revealed .skills-grid .skill-category,
+.reveal-section.revealed .projects-grid .project-card,
+.reveal-section.revealed .art-gallery .art-item,
+.reveal-section.revealed .games-grid .game-card {
+    opacity: 0;
+    animation: cardReveal 0.7s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.reveal-section.revealed .skills-grid .skill-category:nth-child(1),
+.reveal-section.revealed .projects-grid .project-card:nth-child(1),
+.reveal-section.revealed .art-gallery .art-item:nth-child(1),
+.reveal-section.revealed .games-grid .game-card:nth-child(1) {
+    animation-delay: 0.08s;
+}
+
+.reveal-section.revealed .skills-grid .skill-category:nth-child(2),
+.reveal-section.revealed .projects-grid .project-card:nth-child(2),
+.reveal-section.revealed .art-gallery .art-item:nth-child(2),
+.reveal-section.revealed .games-grid .game-card:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.reveal-section.revealed .skills-grid .skill-category:nth-child(3),
+.reveal-section.revealed .projects-grid .project-card:nth-child(3),
+.reveal-section.revealed .art-gallery .art-item:nth-child(3),
+.reveal-section.revealed .games-grid .game-card:nth-child(3) {
+    animation-delay: 0.28s;
+}
+
+.reveal-section.revealed .skills-grid .skill-category:nth-child(4),
+.reveal-section.revealed .projects-grid .project-card:nth-child(4),
+.reveal-section.revealed .art-gallery .art-item:nth-child(4),
+.reveal-section.revealed .games-grid .game-card:nth-child(4) {
+    animation-delay: 0.38s;
+}
+
+.reveal-section.revealed .projects-grid .project-card:nth-child(5),
+.reveal-section.revealed .art-gallery .art-item:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+.reveal-section.revealed .art-gallery .art-item:nth-child(6),
+.reveal-section.revealed .art-gallery .art-item:nth-child(7) {
+    animation-delay: 0.58s;
+}
+
+@keyframes cardReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ---- Section Title Gradient Shimmer ---- */
+.section-title {
+    position: relative;
+    background-size: 200% 100%;
+    animation: titleShimmer 4s ease-in-out infinite;
+}
+
+@keyframes titleShimmer {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* ---- Hero Typewriter Cursor ---- */
+.hero-subtitle {
+    overflow: hidden;
+    border-right: 2px solid var(--primary-light);
+    white-space: nowrap;
+    animation: typewriterCursor 0.7s step-end infinite;
+    display: inline-block;
+}
+
+.hero-subtitle.typed {
+    border-right-color: transparent;
+    animation: none;
+}
+
+@keyframes typewriterCursor {
+
+    0%,
+    100% {
+        border-right-color: var(--primary-light);
+    }
+
+    50% {
+        border-right-color: transparent;
+    }
+}
+
+/* ---- Enhanced Skill Card Hover (Tilt Glow) ---- */
+.skill-category {
+    transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+    will-change: transform;
+}
+
+.skill-category:hover .skill-icon {
+    animation: iconBounce 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes iconBounce {
+    0% {
+        transform: scale(1);
+    }
+
+    30% {
+        transform: scale(1.35) rotate(-8deg);
+    }
+
+    60% {
+        transform: scale(0.95) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.skill-icon {
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+/* ---- Game Card Enhanced Hover ---- */
+.game-card {
+    transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), box-shadow 0.4s ease !important;
+}
+
+.game-card:hover .game-preview-icon {
+    animation: previewPulse 0.6s ease;
+}
+
+@keyframes previewPulse {
+    0% {
+        transform: scale(1);
+    }
+
+    40% {
+        transform: scale(1.25) rotate(5deg);
+    }
+
+    70% {
+        transform: scale(0.9) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* ---- Project Card Image Hover Zoom ---- */
+.project-image {
+    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+    overflow: hidden;
+}
+
+.project-card:hover .project-image .project-gradient {
+    transform: scale(1.08);
+    transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
+}
+
+.project-card:hover .project-image .project-shapes,
+.project-card:hover .project-image .balloon-visual,
+.project-card:hover .project-image .board-visual {
+    transform: scale(1.05);
+    transition: transform 0.6s cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ---- Animated Stats Counter ---- */
+.stat {
+    transition: transform 0.4s cubic-bezier(.22, 1, .36, 1), box-shadow 0.4s ease, border-color 0.3s ease;
+}
+
+.stat-number {
+    transition: transform 0.3s ease;
+}
+
+.stat:hover .stat-number {
+    transform: scale(1.15);
+}
+
+/* ---- Nav Link Underline Slide ---- */
+.nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    transition: width 0.35s cubic-bezier(.22, 1, .36, 1), left 0.35s cubic-bezier(.22, 1, .36, 1) !important;
+}
+
+/* ---- Profile Pic Section Entrance ---- */
+.profile-pic-section.revealed .pic-frame {
+    animation: picEntrance 0.8s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.profile-pic-section.revealed .pic-info {
+    animation: picInfoSlide 0.8s cubic-bezier(.22, 1, .36, 1) 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes picEntrance {
+    from {
+        opacity: 0;
+        transform: scale(0.85) rotate(-3deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes picInfoSlide {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Floating Background Orbs for Sections ---- */
+.category-section {
+    position: relative;
+    overflow: hidden;
+}
+
+.category-section::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.06) 0%, transparent 70%);
+    top: -100px;
+    right: -80px;
+    animation: orbFloat 12s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.category-section::after {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(236, 72, 153, 0.05) 0%, transparent 70%);
+    bottom: -80px;
+    left: -60px;
+    animation: orbFloat 15s ease-in-out infinite 3s;
+    pointer-events: none;
+}
+
+@keyframes orbFloat {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(20px, -30px);
+    }
+
+    50% {
+        transform: translate(-15px, -15px);
+    }
+
+    75% {
+        transform: translate(10px, 20px);
+    }
+}
+
+/* ---- Contact Form Focus Animations ---- */
+.form-group input,
+.form-group textarea {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease !important;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    transform: translateY(-2px);
+}
+
+/* ---- Info Item Stagger Reveal ---- */
+.reveal-section.revealed .contact-info .info-item {
+    opacity: 0;
+    animation: slideInLeft 0.5s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.reveal-section.revealed .contact-info .info-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.reveal-section.revealed .contact-info .info-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.reveal-section.revealed .contact-info .info-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Button Hover Glow Pulse ---- */
+.btn-primary {
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px) !important;
+    box-shadow:
+        0 8px 25px rgba(99, 102, 241, 0.4),
+        0 0 40px rgba(99, 102, 241, 0.15) !important;
+}
+
+.btn-primary:active {
+    transform: translateY(0) !important;
+}
+
+/* ---- Pic Badge Stagger ---- */
+.reveal-section.revealed .pic-badges .pic-badge {
+    opacity: 0;
+    animation: badgePop 0.4s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.reveal-section.revealed .pic-badges .pic-badge:nth-child(1) {
+    animation-delay: 0.35s;
+}
+
+.reveal-section.revealed .pic-badges .pic-badge:nth-child(2) {
+    animation-delay: 0.45s;
+}
+
+.reveal-section.revealed .pic-badges .pic-badge:nth-child(3) {
+    animation-delay: 0.55s;
+}
+
+@keyframes badgePop {
+    from {
+        opacity: 0;
+        transform: scale(0.6) translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* ---- Add More Card Pulse Border ---- */
+.add-more-card {
+    transition: border-color 0.3s ease, background 0.4s ease, transform 0.3s ease !important;
+}
+
+.add-more-card:hover {
+    transform: translateY(-5px);
+}
+
+.add-more-card:hover .add-icon {
+    animation: plusSpin 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes plusSpin {
+    from {
+        transform: rotate(0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(90deg) scale(1.2);
+    }
+
+    to {
+        transform: rotate(90deg) scale(1);
+    }
+}
+
+/* ---- Footer Link Hover ---- */
+.footer-links a {
+    transition: color 0.3s ease, transform 0.3s ease !important;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    transform: translateY(-2px);
+}
+
+/* ---- Smooth Scroll Arrow Glow ---- */
+.arrow-down-anim {
+    position: relative;
+}
+
+.scroll-indicator-profile p,
+.scroll-indicator-skills p {
+    animation: textPulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes textPulseGlow {
+
+    0%,
+    100% {
+        text-shadow: 0 0 5px rgba(99, 102, 241, 0);
+        opacity: 0.7;
+    }
+
+    50% {
+        text-shadow: 0 0 12px rgba(99, 102, 241, 0.5);
+        opacity: 1;
+    }
+}
+
+/* ---- Art Item Hover Overlay ---- */
+.art-item .art-image::after {
+    content: '🔍';
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.art-item:hover .art-image::after {
+    opacity: 1;
+}
+
+/* ---- Tag Hover Effect ---- */
+.tag {
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(99, 102, 241, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 3px 10px rgba(99, 102, 241, 0.2);
+}
+
+/* ---- Navbar Logo Entrance ---- */
+.navbar .logo {
+    animation: logoSlide 0.6s cubic-bezier(.22, 1, .36, 1);
+}
+
+@keyframes logoSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ---- Navbar Menu Items Stagger ---- */
+.nav-menu li {
+    animation: navItemDrop 0.5s cubic-bezier(.22, 1, .36, 1) forwards;
+    opacity: 0;
+}
+
+.nav-menu li:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.nav-menu li:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.nav-menu li:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.nav-menu li:nth-child(4) {
+    animation-delay: 0.25s;
+}
+
+.nav-menu li:nth-child(5) {
+    animation-delay: 0.3s;
+}
+
+.nav-menu li:nth-child(6) {
+    animation-delay: 0.35s;
+}
+
+.nav-menu li:nth-child(7) {
+    animation-delay: 0.4s;
+}
+
+.nav-menu li:nth-child(8) {
+    animation-delay: 0.45s;
+}
+
+.nav-menu li:nth-child(9) {
+    animation-delay: 0.5s;
+}
+
+@keyframes navItemDrop {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---- Reduce Motion for Accessibility ---- */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ==========================================
+   THEME TOGGLE BUTTON — FIXED FLOATING PILL
+   ========================================== */
+.theme-toggle {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px 10px 12px;
+    background: rgba(15, 18, 40, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(99, 102, 241, 0.35);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(.22, 1, .36, 1);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(99, 102, 241, 0.12);
+    overflow: hidden;
+}
+
+.theme-toggle:hover {
+    transform: translateY(-3px) scale(1.04);
+    border-color: var(--primary-color);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.35),
+        0 0 40px rgba(99, 102, 241, 0.25);
+    padding-right: 22px;
+}
+
+.theme-toggle:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.theme-icon-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--neon-purple));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1), box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover .theme-icon-circle {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+}
+
+.theme-icon {
+    font-size: 1.1rem;
+    line-height: 1;
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.theme-toggle.spin .theme-icon-circle {
+    transform: rotate(360deg);
+}
+
+.theme-label {
+    font-family: var(--font-primary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color 0.3s ease;
+}
+
+/* Entrance animation */
+.theme-toggle {
+    animation: toggleSlideIn 0.6s cubic-bezier(.22, 1, .36, 1) 0.5s backwards;
+}
+
+@keyframes toggleSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px) scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ==========================================
+   LIGHT MODE (body.light-mode)
+   ========================================== */
+
+/* --- Smooth transition for ALL elements on theme switch --- */
+body,
+body *,
+body *::before,
+body *::after {
+    transition-property: background-color, background, color, border-color, box-shadow, fill, stroke;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+}
+
+body.light-mode {
+    --bg-dark: #f1f5f9;
+    --bg-darker: #e2e8f0;
+    --bg-card: rgba(255, 255, 255, 0.85);
+    --bg-card-light: rgba(241, 245, 249, 0.9);
+
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
+    --text-muted: #64748b;
+
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
+    --shadow-neon: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 40px rgba(99, 102, 241, 0.05);
+}
+
+/* Navbar light */
+body.light-mode .navbar {
+    background: rgba(241, 245, 249, 0.92);
+    border-bottom-color: rgba(99, 102, 241, 0.15);
+}
+
+body.light-mode .navbar.scrolled {
+    background: rgba(241, 245, 249, 0.97);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Nav links */
+body.light-mode .nav-link {
+    color: var(--text-secondary);
+}
+
+body.light-mode .nav-link:hover,
+body.light-mode .nav-link.active {
+    color: var(--text-primary);
+}
+
+/* Hero background */
+body.light-mode .hero-bg {
+    background:
+        radial-gradient(circle at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(236, 72, 153, 0.06) 0%, transparent 50%),
+        var(--bg-darker);
+}
+
+body.light-mode .particle-canvas {
+    opacity: 0.3;
+}
+
+/* Section title — keep gradient visible */
+body.light-mode .section-title {
+    -webkit-text-fill-color: transparent;
+}
+
+/* Glass cards have solid white bg in light mode */
+body.light-mode .glass-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(99, 102, 241, 0.12);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+body.light-mode .glass-card:hover {
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.12);
+}
+
+/* Skill cards */
+body.light-mode .skill-category {
+    background: rgba(255, 255, 255, 0.9);
+    border-color: rgba(99, 102, 241, 0.12);
+}
+
+body.light-mode .skill-category:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+}
+
+/* Project cards */
+body.light-mode .project-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Game cards */
+body.light-mode .game-card {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border-color: rgba(99, 102, 241, 0.1);
+}
+
+body.light-mode .game-card:hover {
+    box-shadow: 0 12px 40px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Tags */
+body.light-mode .tag {
+    background: rgba(99, 102, 241, 0.1);
+    border-color: rgba(99, 102, 241, 0.3);
+}
+
+body.light-mode .game-tag {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Pic badges */
+body.light-mode .pic-badge {
+    background: rgba(99, 102, 241, 0.08);
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Profile pic section */
+body.light-mode .profile-pic-section {
+    background: linear-gradient(180deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+}
+
+body.light-mode .pic-image {
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* About section */
+body.light-mode .about {
+    background: var(--bg-dark);
+}
+
+body.light-mode .stat {
+    background: rgba(255, 255, 255, 0.95);
+    border-color: rgba(99, 102, 241, 0.12);
+}
+
+body.light-mode .stat:hover {
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.12);
+}
+
+body.light-mode .image-placeholder {
+    background: linear-gradient(135deg, rgba(241, 245, 249, 0.8), rgba(226, 232, 240, 0.8));
+    border-color: rgba(99, 102, 241, 0.15);
+}
+
+/* Project tech spans */
+body.light-mode .project-tech span {
+    background: rgba(241, 245, 249, 0.9);
+    color: var(--text-secondary);
+}
+
+/* Contact */
+body.light-mode .contact {
+    background: var(--bg-darker);
+}
+
+body.light-mode .contact-form {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(99, 102, 241, 0.12);
+}
+
+body.light-mode .form-group input,
+body.light-mode .form-group textarea {
+    background: rgba(241, 245, 249, 0.8);
+    border-color: rgba(99, 102, 241, 0.2);
+    color: var(--text-primary);
+}
+
+body.light-mode .form-group input:focus,
+body.light-mode .form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1), 0 0 10px rgba(99, 102, 241, 0.08);
+}
+
+body.light-mode .info-item {
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--text-secondary);
+}
+
+body.light-mode .info-link {
+    color: var(--primary-dark);
+}
+
+/* Footer */
+body.light-mode .footer {
+    background: var(--bg-darker);
+    border-top-color: rgba(99, 102, 241, 0.1);
+}
+
+/* Add-more cards */
+body.light-mode .add-more-card,
+body.light-mode .add-more-art {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(241, 245, 249, 0.7));
+    border-color: rgba(99, 102, 241, 0.2);
+}
+
+/* Art items */
+body.light-mode .art-item {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* Category section alternating */
+body.light-mode .unity-section {
+    background: var(--bg-darker);
+}
+
+body.light-mode .pgm-section {
+    background: var(--bg-dark);
+}
+
+body.light-mode .design-section {
+    background: var(--bg-darker);
+}
+
+body.light-mode .art-section {
+    background: var(--bg-dark);
+}
+
+/* Skills section */
+body.light-mode .skills {
+    background: var(--bg-dark);
+}
+
+/* Play Now section */
+body.light-mode .play-now-section {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+}
+
+/* Game modal */
+body.light-mode .game-modal-content {
+    background: rgba(255, 255, 255, 0.97);
+    border-color: rgba(99, 102, 241, 0.15);
+}
+
+/* Mobile nav menu */
+@media (max-width: 968px) {
+    body.light-mode .nav-menu {
+        background: rgba(241, 245, 249, 0.98);
+        border-left-color: rgba(99, 102, 241, 0.1);
+    }
+}
+
+/* Theme toggle light mode specific */
+body.light-mode .theme-toggle {
+    background: rgba(255, 255, 255, 0.88);
+    border-color: rgba(99, 102, 241, 0.2);
+    box-shadow:
+        0 4px 20px rgba(0, 0, 0, 0.08),
+        0 0 20px rgba(99, 102, 241, 0.06);
+}
+
+body.light-mode .theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.12),
+        0 0 30px rgba(99, 102, 241, 0.12);
+}
+
+body.light-mode .theme-label {
+    color: rgba(15, 23, 42, 0.85);
+}
+
+/* Scroll indicators */
+body.light-mode .scroll-indicator-profile p,
+body.light-mode .scroll-indicator-skills p {
+    color: var(--text-muted);
+}

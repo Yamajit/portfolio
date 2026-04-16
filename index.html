@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant — Game Developer Portfolio</title>
+    <link rel="icon" type="image/jpeg" href="profile-pic.jpg">
+    <meta name="description"
+        content="Nishant's Nexus, a game developer and designer specializing in 2D/3D modeling and Unity game development. Explore playable games and projects.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;600;700;900&family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="additions.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="delta-theme.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="profile-pic.jpg" alt="Profile" class="nav-profile-pic">
+                <div class="logo-text-group">
+                    <span class="logo-text">Nishant's Nexus</span>
+                    <span class="logo-subtitle">Game Developer</span>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#soft-skills" class="nav-link">Soft Skills</a></li>
+                <li><a href="#play-now" class="nav-link nav-link-play">🎮 Play Now</a></li>
+                <li><a href="#creator-nexus" class="nav-link">Creator Nexus</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero small-hero">
+        <div class="hero-bg"></div>
+        <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+        <!-- Tactical HUD Corners -->
+        <div
+            style="position:absolute;top:90px;left:20px;width:40px;height:40px;border-top:2px solid rgba(0,225,255,0.6);border-left:2px solid rgba(0,225,255,0.6);z-index:2;pointer-events:none;box-shadow:-2px -2px 8px rgba(0,225,255,0.2);">
+        </div>
+        <div
+            style="position:absolute;top:90px;right:20px;width:40px;height:40px;border-top:2px solid rgba(255,0,200,0.6);border-right:2px solid rgba(255,0,200,0.6);z-index:2;pointer-events:none;box-shadow:2px -2px 8px rgba(255,0,200,0.2);">
+        </div>
+        <div
+            style="position:absolute;bottom:80px;left:20px;width:40px;height:40px;border-bottom:2px solid rgba(255,0,200,0.6);border-left:2px solid rgba(255,0,200,0.6);z-index:2;pointer-events:none;box-shadow:-2px 2px 8px rgba(255,0,200,0.2);">
+        </div>
+        <div
+            style="position:absolute;bottom:80px;right:20px;width:40px;height:40px;border-bottom:2px solid rgba(0,225,255,0.6);border-right:2px solid rgba(0,225,255,0.6);z-index:2;pointer-events:none;box-shadow:2px 2px 8px rgba(0,225,255,0.2);">
+        </div>
+
+        <!-- Prism Energy line top -->
+        <div
+            style="position:absolute;top:80px;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(0,225,255,0.4),rgba(255,0,200,0.3),rgba(0,225,255,0.4),transparent);z-index:2;pointer-events:none;">
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-text">
+                <!-- Tactical classification label -->
+                <div
+                    style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(0,225,255,0.7);letter-spacing:5px;text-transform:uppercase;margin-bottom:0.5rem;text-shadow:0 0 8px rgba(0,225,255,0.4);">
+                    &gt; LIGHTCATCHER PROFILE // PRISM ACTIVE
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">WELCOME TO THE</span>
+                    <span class="title-name" data-text="Nishant's Nexus">Nishant's Nexus</span>
+                </h1>
+                <p class="hero-subtitle">Interactive Portfolio by Nishant</p>
+                <div class="hero-cta">
+                    <a href="#play-now" class="btn btn-primary btn-glow">🎮 Deploy & Play</a>
+                    <a href="#about" class="btn btn-secondary">View Profile</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-shapes">
+                    <div class="shape cube"></div>
+                    <div class="shape circle"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator-profile" style="position: absolute; bottom: 30px; z-index: 10; cursor: pointer;">
+            <a href="#profile-pic"
+                style="text-decoration: none; color: inherit; display: flex; flex-direction: column; align-items: center; gap: 8px;">
+                <p>Scroll to Explore</p>
+                <div class="arrow-down-anim"></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Profile Pic Section -->
+    <section id="profile-pic" class="profile-pic-section reveal-section">
+        <div class="container">
+            <div class="pic-showcase">
+                <div class="pic-frame">
+                    <img src="profile-pic.jpg" alt="Nishant — Game Developer" class="pic-image">
+                    <div class="pic-glow"></div>
+                </div>
+                <div class="pic-info">
+                    <!-- Classification Header -->
+                    <div
+                        style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(0,225,255,0.6);letter-spacing:4px;margin-bottom:0.5rem;text-shadow:0 0 6px rgba(0,225,255,0.3);">
+                        [ LIGHTCATCHER FILE // PRISM UNLOCKED ]
+                    </div>
+                    <h2 class="pic-name">Nishant</h2>
+                    <p class="pic-tagline">Game Developer • Designer • Artist</p>
+                    <div class="pic-badges">
+                        <span class="pic-badge">🎮 Unity Dev</span>
+                        <span class="pic-badge">🎨 2D/3D Artist</span>
+                        <span class="pic-badge">🧩 Game Designer</span>
+                    </div>
+                    <p class="pic-bio">
+                        Crafting immersive gaming experiences through code and creativity.
+                        Explore <b style="color:var(--fl-cyan-light);text-shadow:0 0 8px rgba(0,225,255,0.4)">3 playable games</b> in the Play Now section below.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills reveal-section">
+        <div class="container">
+            <h2 class="section-title">Skills &amp; Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <div class="skill-icon" style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(0,225,255,0.08);border:1px solid rgba(0,225,255,0.25);box-shadow:0 0 16px rgba(0,225,255,0.2);font-size:2rem;margin-bottom:1rem;">🎨</div>
+                    <h3>2D/3D Modeling</h3>
+                    <p>Creating detailed game assets, characters, and environments for both 2D and 3D games.</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon" style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(255,0,200,0.08);border:1px solid rgba(255,0,200,0.25);box-shadow:0 0 16px rgba(255,0,200,0.2);font-size:2rem;margin-bottom:1rem;">🎮</div>
+                    <h3>Unity Development</h3>
+                    <p>Building interactive games with Unity engine, implementing game mechanics and physics.</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon" style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(255,208,64,0.08);border:1px solid rgba(255,208,64,0.25);box-shadow:0 0 16px rgba(255,208,64,0.2);font-size:2rem;margin-bottom:1rem;">🧩</div>
+                    <h3>Game Design</h3>
+                    <p>Designing engaging gameplay systems, balancing mechanics, and creating compelling player experiences.</p>
+                </div>
+                <div class="skill-category glass-card">
+                    <div class="skill-icon" style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.25);box-shadow:0 0 16px rgba(0,255,136,0.2);font-size:2rem;margin-bottom:1rem;">📐</div>
+                    <h3>Level Design</h3>
+                    <p>Crafting challenging and rewarding level layouts that guide players through various game genres.</p>
+                </div>
+            </div>
+
+            <div class="scroll-indicator-skills" style="text-align:center;margin-top:3rem;">
+                <p>Scroll to Soft Skills</p>
+                <div class="arrow-down-anim"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOFT SKILLS SECTION -->
+    <section id="soft-skills" class="skills reveal-section">
+        <div class="container">
+            <!-- Tactical label -->
+            <div style="font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(255,0,200,0.7);letter-spacing:5px;text-transform:uppercase;text-align:center;margin-bottom:0.75rem;text-shadow:0 0 8px rgba(255,0,200,0.4);">◈ OPERATOR PROFILE ◈</div>
+            <h2 class="section-title">Soft Skills</h2>
+            <p class="section-description" style="text-align:center;margin-bottom:2.5rem;">&gt; INTERPERSONAL ATTRIBUTES — Core traits that power every great team.</p>
+
+            <div class="skills-grid">
+
+                <!-- Communication -->
+                <div class="skill-category glass-card" style="position:relative;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(0,225,255,0),rgba(0,225,255,0.7),rgba(0,225,255,0));pointer-events:none;"></div>
+                    <div style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(0,225,255,0.08);border:1px solid rgba(0,225,255,0.3);box-shadow:0 0 18px rgba(0,225,255,0.25);font-size:2rem;margin-bottom:1rem;">💬</div>
+                    <h3 style="font-family:'Orbitron',sans-serif;letter-spacing:2px;font-size:1rem;">Communication</h3>
+                    <p>Conveying ideas clearly across teams, documents, and presentations — bridging the gap between design vision and execution.</p>
+                    <div style="margin-top:1rem;display:flex;gap:6px;flex-wrap:wrap;">
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(0,225,255,0.7);border:1px solid rgba(0,225,255,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">VERBAL</span>
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(0,225,255,0.7);border:1px solid rgba(0,225,255,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">WRITTEN</span>
+                    </div>
+                </div>
+
+                <!-- Teamwork -->
+                <div class="skill-category glass-card" style="position:relative;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(255,0,200,0),rgba(255,0,200,0.7),rgba(255,0,200,0));pointer-events:none;"></div>
+                    <div style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(255,0,200,0.08);border:1px solid rgba(255,0,200,0.3);box-shadow:0 0 18px rgba(255,0,200,0.25);font-size:2rem;margin-bottom:1rem;">🤝</div>
+                    <h3 style="font-family:'Orbitron',sans-serif;letter-spacing:2px;font-size:1rem;">Teamwork</h3>
+                    <p>Collaborating with artists, developers, and designers to ship cohesive products — thriving in both leadership and support roles.</p>
+                    <div style="margin-top:1rem;display:flex;gap:6px;flex-wrap:wrap;">
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(255,0,200,0.7);border:1px solid rgba(255,0,200,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">AGILE</span>
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(255,0,200,0.7);border:1px solid rgba(255,0,200,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">COLLAB</span>
+                    </div>
+                </div>
+
+                <!-- Problem Solving -->
+                <div class="skill-category glass-card" style="position:relative;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(255,208,64,0),rgba(255,208,64,0.7),rgba(255,208,64,0));pointer-events:none;"></div>
+                    <div style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(255,208,64,0.08);border:1px solid rgba(255,208,64,0.3);box-shadow:0 0 18px rgba(255,208,64,0.25);font-size:2rem;margin-bottom:1rem;">🧩</div>
+                    <h3 style="font-family:'Orbitron',sans-serif;letter-spacing:2px;font-size:1rem;">Problem Solving</h3>
+                    <p>Breaking down complex game mechanics and design challenges into clear, actionable solutions — even under pressure and tight deadlines.</p>
+                    <div style="margin-top:1rem;display:flex;gap:6px;flex-wrap:wrap;">
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(255,208,64,0.7);border:1px solid rgba(255,208,64,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">CRITICAL</span>
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(255,208,64,0.7);border:1px solid rgba(255,208,64,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">ANALYTICAL</span>
+                    </div>
+                </div>
+
+                <!-- Adaptability -->
+                <div class="skill-category glass-card" style="position:relative;">
+                    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,rgba(0,255,136,0),rgba(0,255,136,0.7),rgba(0,255,136,0));pointer-events:none;"></div>
+                    <div style="display:inline-flex;align-items:center;justify-content:center;width:64px;height:64px;border-radius:12px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.3);box-shadow:0 0 18px rgba(0,255,136,0.25);font-size:2rem;margin-bottom:1rem;">⚡</div>
+                    <h3 style="font-family:'Orbitron',sans-serif;letter-spacing:2px;font-size:1rem;">Adaptability</h3>
+                    <p>Pivoting quickly between tools, genres, and project scopes — from 2D concept art to full 3D Unity builds without missing a beat.</p>
+                    <div style="margin-top:1rem;display:flex;gap:6px;flex-wrap:wrap;">
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(0,255,136,0.7);border:1px solid rgba(0,255,136,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">FLEXIBLE</span>
+                        <span style="font-family:'Share Tech Mono',monospace;font-size:0.65rem;color:rgba(0,255,136,0.7);border:1px solid rgba(0,255,136,0.2);padding:2px 8px;border-radius:4px;letter-spacing:2px;">RESILIENT</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PLAY NOW — 3 GAMES SECTION -->
+    <section id="play-now" class="play-now-section reveal-section">
+        <div class="container">
+            <h2 class="section-title">🎮 Play Now</h2>
+            <p class="section-description">
+                &gt; THREE MISSIONS ACTIVE — Select your objective. All games run in-browser.
+            </p>
+
+            <!-- Tactical label row -->
+            <div
+                style="display:flex;align-items:center;gap:1rem;margin-bottom:2rem;font-family:'Share Tech Mono',monospace;font-size:0.7rem;color:rgba(0,225,255,0.6);letter-spacing:3px;text-transform:uppercase;">
+                <div
+                    style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,225,255,0.4),rgba(255,0,200,0.2),transparent);">
+                </div>
+                <span style="text-shadow:0 0 8px rgba(0,225,255,0.5);">◈ MISSION SELECT ◈</span>
+                <div
+                    style="flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(255,0,200,0.2),rgba(0,225,255,0.4));">
+                </div>
+            </div>
+
+            <div class="games-grid" style="grid-template-columns: repeat(4, 1fr); max-width: 1100px; margin: 0 auto;">
+
+                <!-- GAME ZONE HUB -->
+                <div class="game-card" data-game="gamezone" id="card-gamezone">
+                    <div class="game-card-preview breakout-preview">
+                        <div class="game-preview-icon">🕹️</div>
+                        <div class="game-preview-particles"></div>
+                        <!-- Mission badge -->
+                        <div
+                            style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(255,0,200,0.85);letter-spacing:2px;z-index:5;text-shadow:0 0 6px rgba(255,0,200,0.5);">
+                            HQ-NEXUS</div>
+                        <div
+                            style="position:absolute;top:8px;right:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,225,255,0.7);letter-spacing:1px;z-index:5;">
+                            EXTERNAL</div>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Gaming Hub</h3>
+                        <p>Access the full arcade library with 10+ extra games!</p>
+                        <div class="game-meta">
+                            <span class="game-tag">Portal</span>
+                            <span class="game-tag">Collection</span>
+                        </div>
+                        <button class="btn-play" onclick="window.open('gaming-website/gaming-website.html', '_blank')" id="btn-gamezone">
+                            <span class="play-icon">▶</span> Enter Hub
+                        </button>
+                    </div>
+                </div>                <!-- GAME 1: Snake -->
+                <div class="game-card" data-game="snake" id="card-snake">
+                    <div class="game-card-preview snake-preview">
+                        <div class="game-preview-icon">🐍</div>
+                        <div class="game-preview-particles"></div>
+                        <!-- Mission badge -->
+                        <div
+                            style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,255,136,0.85);letter-spacing:2px;z-index:5;text-shadow:0 0 6px rgba(0,255,136,0.5);">
+                            MISSION-01</div>
+                        <div
+                            style="position:absolute;top:8px;right:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,225,255,0.7);letter-spacing:1px;z-index:5;">
+                            ACTIVE</div>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Snake</h3>
+                        <p>Classic arcade — eat, grow, survive the grid!</p>
+                        <div class="game-meta">
+                            <span class="game-tag">Swipe / Keys</span>
+                            <span class="game-tag">Classic</span>
+                        </div>
+                        <button class="btn-play" onclick="openGame('snake')" id="btn-snake">
+                            <span class="play-icon">▶</span> Deploy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GAME 2: Space Shooter -->
+                <div class="game-card" data-game="space_shooter" id="card-space-shooter">
+                    <div class="game-card-preview shooter-preview">
+                        <div class="game-preview-icon">🚀</div>
+                        <div class="game-preview-particles"></div>
+                        <div
+                            style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,255,136,0.85);letter-spacing:2px;z-index:5;text-shadow:0 0 6px rgba(0,255,136,0.5);">
+                            MISSION-02</div>
+                        <div
+                            style="position:absolute;top:8px;right:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,225,255,0.7);letter-spacing:1px;z-index:5;">
+                            ACTIVE</div>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Space Shooter</h3>
+                        <p>Defend the galaxy from alien invaders!</p>
+                        <div class="game-meta">
+                            <span class="game-tag">Keys / Touch</span>
+                            <span class="game-tag">Shooter</span>
+                        </div>
+                        <button class="btn-play" onclick="openGame('space_shooter')" id="btn-space-shooter">
+                            <span class="play-icon">▶</span> Deploy
+                        </button>
+                    </div>
+                </div>
+
+                <!-- GAME 3: Memory Match -->
+                <div class="game-card" data-game="memory" id="card-memory">
+                    <div class="game-card-preview memory-preview">
+                        <div class="game-preview-icon">🧠</div>
+                        <div class="game-preview-particles"></div>
+                        <div
+                            style="position:absolute;top:8px;left:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,255,136,0.85);letter-spacing:2px;z-index:5;text-shadow:0 0 6px rgba(0,255,136,0.5);">
+                            MISSION-03</div>
+                        <div
+                            style="position:absolute;top:8px;right:8px;font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,225,255,0.7);letter-spacing:1px;z-index:5;">
+                            ACTIVE</div>
+                    </div>
+                    <div class="game-card-info">
+                        <h3>Memory Match</h3>
+                        <p>Flip &amp; match pairs — intel retrieval test!</p>
+                        <div class="game-meta">
+                            <span class="game-tag">Click</span>
+                            <span class="game-tag">Puzzle</span>
+                        </div>
+                        <button class="btn-play" onclick="openGame('memory')" id="btn-memory">
+                            <span class="play-icon">▶</span> Deploy
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Modal -->
+    <div class="game-modal" id="gameModal">
+        <div class="game-modal-content">
+            <div class="game-modal-header">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <div
+                        style="font-family:'Share Tech Mono',monospace;font-size:0.6rem;color:rgba(0,255,136,0.75);letter-spacing:2px;text-shadow:0 0 6px rgba(0,255,136,0.4);">
+                        [ PRISM ACTIVE ]</div>
+                    <h3 id="gameModalTitle">Game</h3>
+                </div>
+                <button class="game-modal-close" onclick="closeGame()" aria-label="Close game">&times;</button>
+            </div>
+            <div class="game-modal-body" id="gameModalBody">
+            </div>
+        </div>
+    </div>
+
+    <!-- THE CREATOR'S NEXUS -->
+    <section id="creator-nexus" class="play-now-section reveal-section" style="padding-top: 4rem;">
+        <div class="container">
+            <h2 class="section-title">Creator's Nexus</h2>
+            <p class="section-description">&gt; PRISM ARCHIVE — Game Design documents, Unity projects &amp; original digital art.</p>
+
+            <div class="games-grid">
+                <!-- Unity Project: Clumsy Quest -->
+                <div class="game-card">
+                    <div class="game-card-preview dino-preview">
+                        <div class="game-preview-icon">🎲</div>
+                    </div>
+                    <div class="game-card-info">
+                        <div class="game-meta">
+                            <span class="game-tag">Unity 3D</span>
+                            <span class="game-tag">Platformer</span>
+                        </div>
+                        <h3>Clumsy Quest</h3>
+                        <p>Shape-shifting 3D adventure with physics-based puzzles.</p>
+                        <button class="btn-play" onclick="window.open('QlumsyQuest_Midterm.pptx', '_blank')">
+                            <span class="play-icon">▶</span> View Project
+                        </button>
+                    </div>
+                </div>
+
+
+                <!-- Board Game: Tactical Rescue -->
+                <div class="game-card">
+                    <div class="game-card-preview typing-preview">
+                        <div class="game-preview-icon">♟️</div>
+                    </div>
+                    <div class="game-card-info">
+                        <div class="game-meta">
+                            <span class="game-tag">Board Game</span>
+                            <span class="game-tag">Strategy</span>
+                        </div>
+                        <h3>Tactical Rescue</h3>
+                        <p>Turn-based strategy board game about emergency response.</p>
+                        <button class="btn-play" onclick="window.open('EXTRACTION (1).docx', '_blank')">
+                            <span class="play-icon">▶</span> View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 3D Art: Character Models -->
+                <div class="game-card">
+                    <div class="game-card-preview breakout-preview">
+                        <div class="game-preview-icon">👾</div>
+                    </div>
+                    <div class="game-card-info">
+                        <div class="game-meta">
+                            <span class="game-tag">3D Art</span>
+                            <span class="game-tag">Characters</span>
+                        </div>
+                        <h3>Character Forge</h3>
+                        <p>High-fidelity 3D character models for game engines.</p>
+                        <button class="btn-play" onclick="window.open('mid.pptx', '_blank')">
+                            <span class="play-icon">▶</span> View Art
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 2D Art: Environment -->
+                <div class="game-card">
+                    <div class="game-card-preview color-preview">
+                        <div class="game-preview-icon">🎨</div>
+                    </div>
+                    <div class="game-card-info">
+                        <div class="game-meta">
+                            <span class="game-tag">2D Art</span>
+                            <span class="game-tag">Concept</span>
+                        </div>
+                        <h3>World Concepts</h3>
+                        <p>Atmospheric 2D environments and background art.</p>
+                        <button class="btn-play" onclick="window.open('midterm_concept_art.pptx', '_blank')">
+                            <span class="play-icon">▶</span> View Art
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Add More Card -->
+                <div class="game-card"
+                    style="display: flex; align-items: center; justify-content: center; cursor: pointer; border: 1px dashed rgba(0,225,255,0.25) !important;">
+                    <div class="add-more-content" style="text-align:center;padding:2rem;">
+                        <div class="add-icon"
+                            style="font-size:2.5rem;color:rgba(0,225,255,0.4);margin-bottom:0.75rem;font-weight:300;">+
+                        </div>
+                        <h3
+                            style="font-family:'Orbitron',sans-serif;letter-spacing:3px;text-transform:uppercase;color:rgba(0,225,255,0.5);font-size:0.9rem;">
+                            Add Project</h3>
+                        <p
+                            style="font-family:'Share Tech Mono',monospace;font-size:0.72rem;color:rgba(0,225,255,0.3);letter-spacing:2px;">
+                            More coming soon</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Back Button -->
+            <div class="section-showcase-btn" style="text-align:center;margin-top:3rem;">
+                <button class="btn btn-secondary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+                    ▲ Back to Top
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about reveal-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Game Design Student &amp; Developer</h3>
+                    <p>I'm a passionate game design student with expertise in creating engaging gaming experiences. My
+                        journey spans from crafting intricate 2D and 3D models to developing full-fledged games in
+                        Unity.</p>
+                    <p>Currently pursuing my Post Graduate in Game Design (PGM), I've worked on diverse
+                        projects ranging from browser games to tactical board games, always pushing the boundaries of
+                        interactive entertainment.</p>
+                    <div class="about-stats">
+                        <div class="stat glass-card">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat glass-card">
+                            <span class="stat-number">2D/3D</span>
+                            <span class="stat-label">Modeling</span>
+                        </div>
+                        <div class="stat glass-card">
+                            <span class="stat-number">Unity</span>
+                            <span class="stat-label">Game Engine</span>
+                        </div>
+                    </div>
+                    <div class="about-cta" style="margin-top: 2rem;">
+                        <a href="Nishant_Resume.docx" download="Nishant_Resume.docx" class="btn btn-secondary">📄
+                            Download Resume</a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-placeholder">
+                        <div class="placeholder-icon">🎮</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact reveal-section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <h3>Let's Create Something Amazing</h3>
+                    <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your
+                        vision.</p>
+                    <div class="contact-info">
+                        <div class="info-item glass-card">
+                            <span class="info-icon">📧</span>
+                            <a href="mailto:nishant1354.be23@chitkarauniversity.edu.in"
+                                class="info-link">nishant1354.be23@chitkarauniversity.edu.in</a>
+                        </div>
+                        <div class="info-item glass-card">
+                            <span class="info-icon">💼</span>
+                            <span style="color:var(--df-text-dim);">Game Design Student</span>
+                        </div>
+                        <div class="info-item glass-card">
+                            <span class="info-icon">📍</span>
+                            <span style="color:var(--df-text-dim);">Available for Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tactical Status Bar -->
+    <div class="status-bar">
+        <div class="status-bar-item">
+            <div class="status-dot"></div>
+            <span>SYSTEM ONLINE</span>
+        </div>
+        <div class="status-bar-item">
+            <span>NISHANT — GAME DEVELOPER</span>
+        </div>
+        <div class="status-bar-item">
+            <span id="statusTime">00:00:00</span>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-text">Nishant</span>
+                    <p>Game Developer &amp; Designer</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#soft-skills">Soft Skills</a>
+                    <a href="#play-now">Play Games</a>
+                    <a href="#creator-nexus">Creator Nexus</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Nishant. Crafted with passion for gaming 🎮</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode" title="Toggle theme">
+        <span class="theme-icon-circle">
+            <span class="theme-icon">🌙</span>
+        </span>
+        <span class="theme-label">Dark</span>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="animations.js"></script>
+
+    <script>
+        /* ── TACTICAL CLOCK ── */
+        function updateClock() {
+            const now = new Date();
+            const h = String(now.getHours()).padStart(2, '0');
+            const m = String(now.getMinutes()).padStart(2, '0');
+            const s = String(now.getSeconds()).padStart(2, '0');
+            const el = document.getElementById('statusTime');
+            if (el) el.textContent = h + ':' + m + ':' + s;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        /* ── PARTICLE OVERHAUL: military amber/olive particles ── */
+        (function dfParticles() {
+            const canvas = document.getElementById('particleCanvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let W, H, particles = [];
+
+            function resize() {
+                W = canvas.width = canvas.offsetWidth;
+                H = canvas.height = canvas.offsetHeight;
+            }
+            window.addEventListener('resize', resize);
+            resize();
+
+            const COLORS = [
+                'rgba(0,225,255,',
+                'rgba(85,240,255,',
+                'rgba(255,0,200,',
+                'rgba(255,208,64,',
+                'rgba(157,0,255,',
+                'rgba(0,255,136,'
+            ];
+
+            for (let i = 0; i < 90; i++) {
+                particles.push({
+                    x: Math.random() * 2000 - 1000,
+                    y: Math.random() * 1200 - 600,
+                    vx: (Math.random() - 0.5) * 0.4,
+                    vy: (Math.random() - 0.5) * 0.4 - 0.15,
+                    r: Math.random() * 1.8 + 0.3,
+                    alpha: Math.random() * 0.6 + 0.1,
+                    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                    shape: Math.random() > 0.7 ? 'square' : 'circle'
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    if (p.x < -50) p.x = W + 50;
+                    if (p.x > W + 50) p.x = -50;
+                    if (p.y < -50) p.y = H + 50;
+                    if (p.y > H + 50) p.y = -50;
+
+                    ctx.globalAlpha = p.alpha;
+                    ctx.fillStyle = p.color + p.alpha + ')';
+                    if (p.shape === 'square') {
+                        ctx.fillRect(p.x - p.r, p.y - p.r, p.r * 2, p.r * 2);
+                    } else {
+                        ctx.beginPath();
+                        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fill();
+                    }
+                });
+                ctx.globalAlpha = 1;
+                requestAnimationFrame(draw);
+            }
+            draw();
+        })();
+
+        /* ── GAME CARD PARTICLE EFFECTS ── */
+        document.querySelectorAll('.game-preview-particles').forEach(container => {
+            const preview = container.parentElement;
+            const previewClass = preview.className;
+            let color1 = 'rgba(0,225,255,';
+            let color2 = 'rgba(255,0,200,';
+            if (previewClass.includes('shooter')) { color1 = 'rgba(157,0,255,'; color2 = 'rgba(0,225,255,'; }
+            if (previewClass.includes('memory')) { color1 = 'rgba(255,208,64,'; color2 = 'rgba(157,0,255,'; }
+
+            for (let i = 0; i < 12; i++) {
+                const dot = document.createElement('div');
+                const size = Math.random() * 3 + 1;
+                const x = Math.random() * 100;
+                const delay = Math.random() * 3;
+                const dur = Math.random() * 4 + 2;
+                const col = Math.random() > 0.5 ? color1 : color2;
+                dot.style.cssText = `
+                position:absolute;
+                left:${x}%;
+                bottom:${Math.random() * 100}%;
+                width:${size}px; height:${size}px;
+                background:${col}${Math.random() * 0.6 + 0.2}); 
+                border-radius:${Math.random() > 0.5 ? '50%' : '1px'};
+                animation: dfParticleRise ${dur}s ${delay}s ease-in-out infinite;
+                pointer-events:none;
+                z-index:1;
+            `;
+                container.appendChild(dot);
+            }
+        });
+
+        /* Particle rise keyframes injection */
+        const styleEl = document.createElement('style');
+        styleEl.textContent = `
+        @keyframes dfParticleRise {
+            0%   { transform: translateY(0) scale(1); opacity: 0; }
+            20%  { opacity: 1; }
+            80%  { opacity: 0.4; }
+            100% { transform: translateY(-80px) scale(0.5); opacity: 0; }
+        }
+    `;
+        document.head.appendChild(styleEl);
+
+        /* ── TYPEWRITER EFFECT ON HERO SUBTITLE ── */
+        (function typewriter() {
+            const el = document.querySelector('.hero-subtitle');
+            if (!el) return;
+            const text = el.textContent.trim();
+            el.textContent = '';
+            el.style.borderRight = 'none'; // handled by ::after
+            let i = 0;
+            function type() {
+                if (i < text.length) {
+                    el.textContent += text[i];
+                    i++;
+                    setTimeout(type, 60 + Math.random() * 40);
+                }
+            }
+            setTimeout(type, 1200);
+        })();
+
+        /* ── ANIMATED SCAN LINE on Hero BG ── */
+        (function heroScanLine() {
+            const hero = document.getElementById('home');
+            if (!hero) return;
+            const line = document.createElement('div');
+            line.style.cssText = `
+            position:absolute; left:0; right:0; height:2px; top:0%;
+            background:linear-gradient(90deg,transparent,rgba(0,225,255,0.12),rgba(255,0,200,0.08),transparent);
+            pointer-events:none; z-index:3;
+            animation: heroScan 6s linear infinite;
+        `;
+            hero.appendChild(line);
+
+            const ks = document.createElement('style');
+            ks.textContent = `
+            @keyframes heroScan {
+                0%   { top: 0%; opacity: 0.6; }
+                100% { top: 100%; opacity: 0.1; }
+            }
+        `;
+            document.head.appendChild(ks);
+        })();
+
+        /* ── MISSION COUNTER ANIMATION on cards ── */
+        (function missionCounters() {
+            const cards = document.querySelectorAll('#play-now .game-card');
+            cards.forEach((card, i) => {
+                card.style.animationDelay = (i * 0.12) + 's';
+            });
+        })();
+    </script>
+</body>
+
+</html>

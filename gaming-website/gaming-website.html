@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone — Your Ultimate Gaming Portal</title>
+    <meta name="description"
+        content="GameZone: Play 29+ free browser games including endless runners, arcade classics, card games, puzzles, and more. No downloads required.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Courier+Prime:wght@400;700&family=Orbitron:wght@400;500;600;700;800;900&family=Press+Start+2P&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/gaming-website-style.css">
+    <link rel="stylesheet" href="css/intro.css">
+    <link rel="stylesheet" href="css/games.css">
+    <link rel="stylesheet" href="css/info-sections.css">
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <!-- ==================== INTRO CINEMATIC ==================== -->
+    <div id="intro-overlay" class="intro-overlay">
+        <button id="skip-intro" class="skip-btn">Skip ▶▶</button>
+        <div class="intro-scene" id="scene-1">
+            <div class="scene-visual">
+                <div class="pixel-child">
+                    <div class="child-body"></div>
+                    <div class="controller-glow"></div>
+                </div>
+                <div class="floating-pixels">
+                    <span></span><span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <p class="scene-text">"It all started with a single button press..."</p>
+        </div>
+        <div class="intro-scene" id="scene-2">
+            <div class="scene-visual">
+                <div class="era-timeline">
+                    <div class="era era-8bit">8-BIT</div>
+                    <div class="era-arrow">→</div>
+                    <div class="era era-16bit">16-BIT</div>
+                    <div class="era-arrow">→</div>
+                    <div class="era era-modern">HD</div>
+                    <div class="era-arrow">→</div>
+                    <div class="era era-future">∞</div>
+                </div>
+                <div class="growing-figure">
+                    <div class="figure-silhouette"></div>
+                </div>
+            </div>
+            <p class="scene-text">"Years of quests... countless worlds explored..."</p>
+        </div>
+        <div class="intro-scene" id="scene-3">
+            <div class="scene-visual">
+                <div class="overlord-container">
+                    <div class="overlord-crown">👑</div>
+                    <div class="overlord-figure">
+                        <div class="overlord-glow"></div>
+                        <div class="overlord-silhouette"></div>
+                    </div>
+                    <div class="power-particles">
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                </div>
+            </div>
+            <p class="scene-text">"From player... to <span class="glow-text">LEGEND</span>."</p>
+        </div>
+        <div class="intro-scene" id="scene-final">
+            <div class="logo-reveal">
+                <h1 class="site-logo-intro">GAME<span>ZONE</span></h1>
+                <p class="tagline-intro">Your Kingdom Awaits</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MAIN WEBSITE ==================== -->
+    <div id="main-site" class="main-site hidden">
+        <!-- NAVBAR -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <span class="logo-icon">🎮</span>
+                    <span class="logo-text">GAME<span class="logo-accent">ZONE</span></span>
+                </a>
+                <div class="nav-links">
+                    <a href="#games" class="nav-link active">Games</a>
+                    <a href="#runners" class="nav-link">Runners</a>
+                    <a href="#arcade" class="nav-link">Arcade</a>
+                    <a href="#puzzle" class="nav-link">Puzzle</a>
+                    <a href="#action" class="nav-link">Action</a>
+                    <a href="#skill" class="nav-link">Skill</a>
+                    <a href="#sports" class="nav-link">Sports</a>
+                    <a href="#cards" class="nav-link">Cards</a>
+                </div>
+                <div class="nav-actions">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search games..." autocomplete="off">
+                        <span class="search-icon">🔍</span>
+                    </div>
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon-sun">☀️</span>
+                        <span class="theme-icon-moon">🌙</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- HERO -->
+        <header class="hero">
+            <div class="hero-bg">
+                <div class="hero-particles" id="hero-particles"></div>
+            </div>
+            <div class="hero-content">
+                <div class="mascot-container">
+                    <div class="glowing-cube">
+                        <div class="cube-face front">❤️</div>
+                        <div class="cube-face back">?</div>
+                        <div class="cube-face right"></div>
+                        <div class="cube-face left"></div>
+                        <div class="cube-face top"></div>
+                        <div class="cube-face bottom"></div>
+                    </div>
+                    <div class="cube-trail"></div>
+                </div>
+                <h1 class="hero-title">GAME<span class="hero-accent">ZONE</span></h1>
+                <p class="hero-subtitle">29 Free Browser Games • No Downloads • Play Instantly</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number" data-target="29">0</span>
+                        <span class="stat-label">Games</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="5">0</span>
+                        <span class="stat-label">Categories</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">% Free</span>
+                    </div>
+                </div>
+                <a href="#games" class="hero-cta">
+                    <span>Start Playing</span>
+                    <span class="cta-arrow">→</span>
+                </a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
+            </div>
+        </header>
+
+        <!-- GAMES SECTION — Organized by Category -->
+        <section id="games" class="games-section">
+            <div class="section-header">
+                <h2 class="section-title">Game <span class="accent">Library</span></h2>
+                <p class="section-desc">29 browser games, no downloads. Pick a category and play.</p>
+            </div>
+            <!-- Category Filter Tabs -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="all">
+                    <span class="filter-icon">🎮</span> All Games
+                </button>
+                <button class="filter-btn" data-category="runner">
+                    <span class="filter-icon">🏃</span> Runners
+                </button>
+                <button class="filter-btn" data-category="action">
+                    <span class="filter-icon">⚡</span> Action
+                </button>
+                <button class="filter-btn" data-category="arcade">
+                    <span class="filter-icon">👾</span> Arcade
+                </button>
+                <button class="filter-btn" data-category="skill">
+                    <span class="filter-icon">🧠</span> Skill
+                </button>
+                <button class="filter-btn" data-category="puzzle">
+                    <span class="filter-icon">🧩</span> Puzzle
+                </button>
+                <button class="filter-btn" data-category="cards">
+                    <span class="filter-icon">🃏</span> Cards
+                </button>
+            </div>
+
+            <!-- ═══ RUNNERS ═══ -->
+            <div class="cat-section" data-cat="runner">
+                <div class="cat-header">
+                    <span class="cat-header__icon">🏃</span>
+                    <h3 class="cat-header__title">Runners</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">6 games</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Neon Flip -->
+                    <div class="game-card" id="card-neon-flip" data-category="runner" data-game="neon-flip">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff00ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🌀</div>
+                        <div class="card-badge runner">Runner</div>
+                        <h3 class="card-title">Neon Flip</h3>
+                        <p class="card-desc">Jump and flip through endless neon corridors. Tap to survive the geometric
+                            gauntlet!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↕ Flip</span>
+                            <span class="meta-keys">⌨ Space / Click</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('neon-flip')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Chroma Shift -->
+                    <div class="game-card" id="card-chroma-shift" data-category="runner" data-game="chroma-shift">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00f7ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🎨</div>
+                        <div class="card-badge runner">Runner</div>
+                        <h3 class="card-title">Chroma Shift</h3>
+                        <p class="card-desc">Match the gate color! Shift between Cyan and Pink to survive the rush.</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↔ Color Match</span>
+                            <span class="meta-keys">⌨ Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('chroma-shift')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Sky Dash -->
+                    <div class="game-card game-card--new" id="card-sky-dash" data-category="runner"
+                        data-game="sky-dash">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00ff88 0%, transparent 70%);"></div>
+                        <div class="card-icon">🚀</div>
+                        <div class="card-badge runner">Runner</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Sky Dash</h3>
+                        <p class="card-desc">Run endlessly, jump over glowing obstacles and collect coins! Double-jump
+                            allowed — how far can you go?</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↑ Jump &amp; Run</span>
+                            <span class="meta-keys">⌨ Space / Click</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('sky-dash')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Color Road -->
+                    <div class="game-card game-card--new" id="card-color-road" data-category="runner"
+                        data-game="color-road">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ffe066 0%, transparent 70%);"></div>
+                        <div class="card-icon">🚦</div>
+                        <div class="card-badge runner">Runner</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Color Road</h3>
+                        <p class="card-desc">Tap to switch lanes and match your ball's color to the incoming blocks.
+                            Wrong color = CRASH!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🎮 Lane Switch</span>
+                            <span class="meta-keys">⌨ Space / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('color-road')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                    <!-- Meteor Rain -->
+                    <div class="game-card game-card--new" id="card-meteor-rain" data-category="runner"
+                        data-game="meteor-rain">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff6644 0%, transparent 70%);"></div>
+                        <div class="card-icon">&#9732;&#65039;</div>
+                        <div class="card-badge runner">Runner</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Meteor Rain</h3>
+                        <p class="card-desc">Pilot your neon ship through a devastating meteor shower. Dodge left &amp;
+                            right &mdash; how long can you survive?</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">&#9732; Dodge</span>
+                            <span class="meta-keys">&#8592; &#8594; / A D</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('meteor-rain')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+
+
+                    <!-- Tunnel Rush -->
+                    <div class="game-card game-card--new" id="card-tunnel-rush" data-category="runner"
+                        data-game="tunnel-rush">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #cc00ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🌀</div>
+                        <div class="card-badge runner">Runner</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Tunnel Rush</h3>
+                        <p class="card-desc">Hurtle through a 3D neon tunnel! Dodge rotating obstacle rings — they get
+                            faster and denser the further you go!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🌀 3D Tunnel</span>
+                            <span class="meta-keys">⌨ ← → / A D</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('tunnel-rush')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ═══ ACTION ═══ -->
+            <div class="cat-section" data-cat="action">
+                <div class="cat-header">
+                    <span class="cat-header__icon">⚡</span>
+                    <h3 class="cat-header__title">Action</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">6 games</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Gravity Grid -->
+                    <div class="game-card game-card--new" id="card-gravity-grid" data-category="action"
+                        data-game="gravity-grid">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #cc00ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">⚡</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Gravity Grid</h3>
+                        <p class="card-desc">Flip gravity to guide your neon ball through 5 spike-filled levels. Don't
+                            touch the walls!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↕ Gravity Flip</span>
+                            <span class="meta-keys">⌨ ←→ + Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('gravity-grid')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Neon Sniper -->
+                    <div class="game-card game-card--new" id="card-neon-sniper" data-category="action"
+                        data-game="neon-sniper">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff4d4d 0%, transparent 70%);"></div>
+                        <div class="card-icon">🎯</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Neon Sniper</h3>
+                        <p class="card-desc">Rotate your center turret and blast hexagonal enemies before they breach
+                            your sector.</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🔫 Top-Down</span>
+                            <span class="meta-keys">⌨ ←→ + Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('neon-sniper')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Asteroid Storm -->
+                    <div class="game-card game-card--new" id="card-asteroid-storm" data-category="action"
+                        data-game="asteroid-storm">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff6644 0%, transparent 70%);"></div>
+                        <div class="card-icon">🌌</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Asteroid Storm</h3>
+                        <p class="card-desc">Pilot your ship and blast incoming asteroids! SPACE auto-aims at the
+                            nearest threat. Survive all waves!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🚀 Space Shooter</span>
+                            <span class="meta-keys">⌨ WASD + Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('asteroid-storm')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Laser Defense -->
+                    <div class="game-card game-card--new" id="card-laser-defense" data-category="action"
+                        data-game="laser-defense">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🛡️</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Laser Defense</h3>
+                        <p class="card-desc">Move your shield to block enemy lasers raining down on your base. Survive
+                            all waves!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🛡️ Defend</span>
+                            <span class="meta-keys">⌨ ←→ keys</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('laser-defense')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                    <!-- Tank Blitz -->
+                    <div class="game-card game-card--new" id="card-tank-blitz" data-category="action"
+                        data-game="tank-blitz">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00ff88 0%, transparent 70%);"></div>
+                        <div class="card-icon">&#128269;</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Tank Blitz</h3>
+                        <p class="card-desc">Command your neon tank! Rotate, charge forward, and blast waves of enemy
+                            tanks before they destroy you!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">&#127918; Top-Down</span>
+                            <span class="meta-keys">&#8328; WASD + Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('tank-blitz')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+                    <!-- Plasma Shield -->
+                    <div class="game-card game-card--new" id="card-plasma-shield" data-category="action"
+                        data-game="plasma-shield">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00ff88 0%, transparent 70%);"></div>
+                        <div class="card-icon">🛸</div>
+                        <div class="card-badge action">Action</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Plasma Shield</h3>
+                        <p class="card-desc">Rotate your circular energy shield to deflect enemy plasma bolts! Waves get
+                            faster — don't let any reach your core!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🛡 Defend</span>
+                            <span class="meta-keys">⌨ ← → to rotate</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('plasma-shield')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ═══ ARCADE ═══ -->
+            <div class="cat-section" data-cat="arcade">
+                <div class="cat-header">
+                    <span class="cat-header__icon">👾</span>
+                    <h3 class="cat-header__title">Arcade</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">7 games</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Pixel Dodge -->
+                    <div class="game-card game-card--new" id="card-pixel-dodge" data-category="arcade"
+                        data-game="pixel-dodge">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🚀</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Pixel Dodge</h3>
+                        <p class="card-desc">Dodge falling neon blocks! Dash to escape tight gaps and survive as long as
+                            possible.</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↕ Dodge</span>
+                            <span class="meta-keys">⌨ ←→ + Space dash</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('pixel-dodge')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Neon Pong -->
+                    <div class="game-card game-card--new" id="card-neon-pong" data-category="arcade"
+                        data-game="neon-pong">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff4488 0%, transparent 70%);"></div>
+                        <div class="card-icon">🏓</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Neon Pong</h3>
+                        <p class="card-desc">Classic pong vs adaptive AI. Hit the center power zone for a speed burst.
+                            First to 7 wins!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🎨 Classic</span>
+                            <span class="meta-keys">⌨ W/S or ↑↓</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('neon-pong')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Neon Snake -->
+                    <div class="game-card game-card--new" id="card-neon-snake" data-category="arcade"
+                        data-game="neon-snake">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00ff88 0%, transparent 70%);"></div>
+                        <div class="card-icon">🐍</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Neon Snake</h3>
+                        <p class="card-desc">Classic snake with neon visuals and power-ups: Speed boost, Ghost mode, and
+                            Shrink!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">↕↔ Snake</span>
+                            <span class="meta-keys">⌨ WASD or ←↑→↓</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('neon-snake')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Bubble Burst -->
+                    <div class="game-card game-card--new" id="card-bubble-burst" data-category="arcade"
+                        data-game="bubble-burst">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff4d6d 0%, transparent 70%);"></div>
+                        <div class="card-icon">🫧</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Bubble Burst</h3>
+                        <p class="card-desc">Colorful bubbles float up — click them before they escape! Build combos for
+                            massive bonus points!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🫧 Pop!</span>
+                            <span class="meta-keys">🖱 Click / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('bubble-burst')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Fruit Catcher -->
+                    <div class="game-card game-card--new" id="card-fruit-catcher" data-category="arcade"
+                        data-game="fruit-catcher">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ffaa00 0%, transparent 70%);"></div>
+                        <div class="card-icon">🍎</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Fruit Catcher</h3>
+                        <p class="card-desc">Catch falling fruits in your basket and dodge bombs! Build combos for
+                            double points!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🫐 Catch!</span>
+                            <span class="meta-keys">⌨ ←→ / Drag</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('fruit-catcher')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                    <!-- Whack-A-Mole -->
+                    <div class="game-card game-card--new" id="card-whack-a-mole" data-category="arcade"
+                        data-game="whack-a-mole">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #a16207 0%, transparent 70%);"></div>
+                        <div class="card-icon">&#128296;</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Whack-A-Mole</h3>
+                        <p class="card-desc">Moles pop up &mdash; smash them before they hide! 60 seconds on the clock.
+                            How many can you whack?</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">&#128296; Smash!</span>
+                            <span class="meta-keys">&#128433; Click / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('whack-a-mole')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+                    <!-- Brick Breaker -->
+                    <div class="game-card game-card--new" id="card-brick-breaker" data-category="arcade"
+                        data-game="brick-breaker">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ffe066 0%, transparent 70%);"></div>
+                        <div class="card-icon">🧱</div>
+                        <div class="card-badge arcade">Arcade</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Brick Breaker</h3>
+                        <p class="card-desc">Classic breakout action! Bounce the ball to smash neon bricks. Grab
+                            power-ups for a wide paddle or multi-ball mayhem!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🧱 Breakout</span>
+                            <span class="meta-keys">🖱 Mouse / Touch</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('brick-breaker')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ═══ SKILL ═══ -->
+            <div class="cat-section" data-cat="skill">
+                <div class="cat-header">
+                    <span class="cat-header__icon">🧠</span>
+                    <h3 class="cat-header__title">Skill</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">5 games</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Echo Trace -->
+                    <div class="game-card game-card--new" id="card-echo-trace" data-category="skill"
+                        data-game="echo-trace">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff9900 0%, transparent 70%);"></div>
+                        <div class="card-icon">🎵</div>
+                        <div class="card-badge skill">Skill</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Echo Trace</h3>
+                        <p class="card-desc">Watch the glowing sequence on a 3×3 grid, then repeat it perfectly. Each
+                            round adds one more step.</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🧠 Memory</span>
+                            <span class="meta-keys">🖱 Click / Keys 1–9</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('echo-trace')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Speed Tap -->
+                    <div class="game-card game-card--new" id="card-speed-tap" data-category="skill"
+                        data-game="speed-tap">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #cc00ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">⚡</div>
+                        <div class="card-badge skill">Skill</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Speed Tap</h3>
+                        <p class="card-desc">Targets appear and shrink — click them before they vanish! Faster reactions
+                            = more points. Build a streak!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">⚡ Reaction</span>
+                            <span class="meta-keys">🖱 Click / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('speed-tap')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Aim Trainer -->
+                    <div class="game-card game-card--new" id="card-aim-trainer" data-category="skill"
+                        data-game="aim-trainer">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff4d6d 0%, transparent 70%);"></div>
+                        <div class="card-icon">🎯</div>
+                        <div class="card-badge skill">Skill</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Aim Trainer</h3>
+                        <p class="card-desc">Moving bullseye targets bounce around the screen. Hit the center for max
+                            points. Build a streak!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🎯 Precision</span>
+                            <span class="meta-keys">🖱 Click / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('aim-trainer')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                    <!-- Reaction Time -->
+                    <div class="game-card game-card--new" id="card-reaction-time" data-category="skill"
+                        data-game="reaction-time">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">&#9201;&#65039;</div>
+                        <div class="card-badge skill">Skill</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Reaction Time</h3>
+                        <p class="card-desc">When the circle turns GREEN &mdash; click as fast as you can! 10 rounds.
+                            Average your time and beat your best!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">&#9889; Reflex</span>
+                            <span class="meta-keys">&#128433; Click / Space</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('reaction-time')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+                    <!-- Number Memory -->
+                    <div class="game-card game-card--new" id="card-number-memory" data-category="skill"
+                        data-game="number-memory">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ff9900 0%, transparent 70%);"></div>
+                        <div class="card-icon">🔢</div>
+                        <div class="card-badge skill">Skill</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Number Memory</h3>
+                        <p class="card-desc">A number flashes on screen — memorize it, then type it back! Numbers get
+                            longer and display time shrinks each level!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🔢 Memory</span>
+                            <span class="meta-keys">⌨ Type digits</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('number-memory')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ═══ PUZZLE ═══ -->
+            <div class="cat-section" data-cat="puzzle">
+                <div class="cat-header">
+                    <span class="cat-header__icon">🧩</span>
+                    <h3 class="cat-header__title">Puzzle</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">5 games</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Stack Rush -->
+                    <div class="game-card game-card--new" id="card-stack-rush" data-category="puzzle"
+                        data-game="stack-rush">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #ffe066 0%, transparent 70%);"></div>
+                        <div class="card-icon">🏗️</div>
+                        <div class="card-badge puzzle">Puzzle</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Stack Rush</h3>
+                        <p class="card-desc">Drop sliding blocks onto a growing tower. Land it perfectly for bonus
+                            points — one slip and it collapses!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🏗 Stack</span>
+                            <span class="meta-keys">⌨ Space / Click</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('stack-rush')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Gem Match -->
+                    <div class="game-card game-card--new" id="card-gem-match" data-category="puzzle"
+                        data-game="gem-match">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">💎</div>
+                        <div class="card-badge puzzle">Puzzle</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Gem Match</h3>
+                        <p class="card-desc">Swap adjacent gems to match 3 or more in a row. Chain combos and cascades
+                            for explosive points!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">💎 Match-3</span>
+                            <span class="meta-keys">🖱 Click to swap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('gem-match')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+                    <!-- Tile Slide -->
+                    <div class="game-card game-card--new" id="card-tile-slide" data-category="puzzle"
+                        data-game="tile-slide">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00ff88 0%, transparent 70%);"></div>
+                        <div class="card-icon">📲</div>
+                        <div class="card-badge puzzle">Puzzle</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Tile Slide</h3>
+                        <p class="card-desc">Classic 15-puzzle! Slide numbered tiles into order 1–15. Click any
+                            highlighted tile to move it into the gap.</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🧩 15-Puzzle</span>
+                            <span class="meta-keys">🖱 Click / Arrows</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('tile-slide')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                    <!-- 2048 -->
+                    <div class="game-card game-card--new" id="card-game-2048" data-category="puzzle"
+                        data-game="game-2048">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #edc22e 0%, transparent 70%);"></div>
+                        <div class="card-icon">&#128290;</div>
+                        <div class="card-badge puzzle">Puzzle</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">2048</h3>
+                        <p class="card-desc">Merge tiles to reach 2048! Slide numbered tiles together &mdash; same
+                            numbers combine. Think ahead to win!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">&#128290; Merge</span>
+                            <span class="meta-keys">&#8328; Arrow Keys</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('game-2048')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+                    <!-- Sudoku Lite -->
+                    <div class="game-card game-card--new" id="card-sudoku-lite" data-category="puzzle"
+                        data-game="sudoku-lite">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #00d4ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🔢</div>
+                        <div class="card-badge puzzle">Puzzle</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Sudoku Lite</h3>
+                        <p class="card-desc">Classic Sudoku on a compact 6×6 grid. Fill every row, column, and 2×3 box
+                            with numbers 1–6. Perfect for a quick brain workout!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🧩 Sudoku</span>
+                            <span class="meta-keys">🖱 Click + 1–6</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('sudoku-lite')">
+                            <span>PLAY</span><span class="play-arrow">▶</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ═══ CARDS ═══ -->
+            <div class="cat-section" id="cards" data-cat="cards">
+                <div class="cat-header">
+                    <span class="cat-header__icon">🃏</span>
+                    <h3 class="cat-header__title">Cards</h3>
+                    <div class="cat-header__line"></div>
+                    <span class="cat-header__count">1 game</span>
+                </div>
+                <div class="game-grid">
+                    <!-- Neon Memory -->
+                    <div class="game-card game-card--new" id="card-neon-memory" data-category="cards"
+                        data-game="neon-memory">
+                        <div class="card-glow"
+                            style="background: radial-gradient(circle, #cc00ff 0%, transparent 70%);"></div>
+                        <div class="card-icon">🃏</div>
+                        <div class="card-badge cards">Cards</div>
+                        <div class="card-badge-new">NEW</div>
+                        <h3 class="card-title">Neon Memory</h3>
+                        <p class="card-desc">Flip neon cards to find matching icon pairs on a 4&times;4 grid. Test your
+                            memory — match all 8 pairs in the fewest moves!</p>
+                        <div class="card-meta">
+                            <span class="meta-perspective">🃏 Memory</span>
+                            <span class="meta-keys">🖱 Click / Tap</span>
+                        </div>
+                        <button class="play-btn" onclick="launchGame('neon-memory')">
+                            <span>PLAY</span><span class="play-arrow">&#9654;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             SECTION: HISTORY OF GAMING TIMELINE
+        ═══════════════════════════════════════════════════════════════ -->
+        <section id="gaming-history" class="info-section">
+            <div class="section-container">
+                <div class="section-tag">📚 Origins</div>
+                <h2 class="section-heading">History of <span class="accent-neon">Gaming</span></h2>
+                <p class="section-sub">From a single blinking dot to billions of players — the journey of video games is
+                    one of humanity's greatest adventures.</p>
+
+                <div class="timeline">
+                    <div class="timeline-item" data-era="1958">
+                        <div class="tl-dot" style="background:#ff4d6d;box-shadow:0 0 16px #ff4d6d;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">1958</span>
+                            <div class="tl-icon">🎾</div>
+                            <h4 class="tl-title">Tennis for Two</h4>
+                            <p class="tl-desc">Physicist William Higinbotham creates the very first interactive video
+                                game — a basic tennis simulation on an oscilloscope. The seed of a revolution is
+                                planted.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="1972">
+                        <div class="tl-dot" style="background:#ffaa00;box-shadow:0 0 16px #ffaa00;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">1972</span>
+                            <div class="tl-icon">🕹️</div>
+                            <h4 class="tl-title">PONG & Atari</h4>
+                            <p class="tl-desc">Atari releases PONG — the first commercially successful arcade game.
+                                Families gather around TVs to bounce a pixel square. An industry worth zero becomes
+                                worth millions overnight.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="1980">
+                        <div class="tl-dot" style="background:#ffe066;box-shadow:0 0 16px #ffe066;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">1980s</span>
+                            <div class="tl-icon">👾</div>
+                            <h4 class="tl-title">Arcade Golden Age</h4>
+                            <p class="tl-desc">Pac-Man, Donkey Kong, Space Invaders. Teenagers pour quarters into arcade
+                                cabinets. Video games enter homes via Atari 2600 &amp; ColecoVision. The pixel becomes
+                                pop culture.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="1985">
+                        <div class="tl-dot" style="background:#00ff88;box-shadow:0 0 16px #00ff88;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">1985</span>
+                            <div class="tl-icon">🍄</div>
+                            <h4 class="tl-title">Nintendo &amp; Super Mario</h4>
+                            <p class="tl-desc">Nintendo releases Super Mario Bros. for the NES, saving a crashing
+                                industry. Mario becomes the most recognisable fictional character on Earth — more famous
+                                than Mickey Mouse.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="1993">
+                        <div class="tl-dot" style="background:#00d4ff;box-shadow:0 0 16px #00d4ff;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">1993</span>
+                            <div class="tl-icon">🔫</div>
+                            <h4 class="tl-title">DOOM &amp; the 3D Revolution</h4>
+                            <p class="tl-desc">id Software's DOOM invents the first-person shooter. 3D polygonal
+                                graphics replace flat sprites. The gaming world enters a new dimension — literally.
+                                Multiplayer deathmatch is born.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="2000">
+                        <div class="tl-dot" style="background:#cc00ff;box-shadow:0 0 16px #cc00ff;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">2000s</span>
+                            <div class="tl-icon">🌐</div>
+                            <h4 class="tl-title">Online Multiplayer Era</h4>
+                            <p class="tl-desc">Broadband internet connects players across the globe. World of Warcraft
+                                reaches 12 million subscribers. Halo 2 defines online console gaming. Gaming goes social
+                                — forever.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="2007">
+                        <div class="tl-dot" style="background:#ff6644;box-shadow:0 0 16px #ff6644;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">2007</span>
+                            <div class="tl-icon">📱</div>
+                            <h4 class="tl-title">Mobile Gaming Arrives</h4>
+                            <p class="tl-desc">The iPhone App Store changes everything. Angry Birds, Subway Surfers,
+                                Candy Crush reach 1 billion players. Suddenly everyone has a game console in their
+                                pocket at all times.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-era="2020">
+                        <div class="tl-dot" style="background:#ffffff;box-shadow:0 0 16px #aaaaff;"></div>
+                        <div class="tl-card">
+                            <span class="tl-year">2020s</span>
+                            <div class="tl-icon">🚀</div>
+                            <h4 class="tl-title">Browser &amp; Beyond</h4>
+                            <p class="tl-desc">HTML5 games run in any browser with zero downloads. Cloud gaming, VR, AR,
+                                and AI characters push boundaries. The $200 billion gaming industry now dwarfs Hollywood
+                                and music combined.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             SECTION: THE POWER OF PIXEL GAMES
+        ═══════════════════════════════════════════════════════════════ -->
+        <section id="pixel-power" class="info-section alt-bg">
+            <div class="section-container">
+                <div class="section-tag">🎨 Art & Design</div>
+                <h2 class="section-heading">Why <span class="accent-neon">Pixel</span> Games Matter</h2>
+                <p class="section-sub">In an age of photorealistic graphics, pixel art and browser games remain beloved
+                    icons. Here's why they're timeless — and essential.</p>
+
+                <div class="pixel-grid">
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(255,77,109,0.15);border-color:rgba(255,77,109,0.4);">🎭</div>
+                        <h3 class="pixel-card__title">Imagination Over Realism</h3>
+                        <p class="pixel-card__desc">A 16×16 sprite of a hero leaves the details to your imagination.
+                            Pixel art is a <em>visual language</em> — each block is a brushstroke that your brain
+                            completes into something magical. That's not a limitation, it's a superpower.</p>
+                    </div>
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(255,170,0,0.15);border-color:rgba(255,170,0,0.4);">⚡</div>
+                        <h3 class="pixel-card__title">Instant Accessibility</h3>
+                        <p class="pixel-card__desc">Browser games powered by HTML5 Canvas run on <strong>any
+                                device</strong> — $200 laptop, old phone, school computer. No GPU required. Gaming
+                            becomes truly universal when a click is all you need.</p>
+                    </div>
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(0,212,255,0.15);border-color:rgba(0,212,255,0.4);">🧠</div>
+                        <h3 class="pixel-card__title">Pure Game Design</h3>
+                        <p class="pixel-card__desc">Without photorealistic graphics to hide behind, pixel and browser
+                            games live or die by <em>gameplay</em>. Pong, Tetris, Snake — simple visuals, infinite
+                            depth. The best games in history were built on a 5-colour palette.</p>
+                    </div>
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(0,255,136,0.15);border-color:rgba(0,255,136,0.4);">💻</div>
+                        <h3 class="pixel-card__title">The Canvas Revolution</h3>
+                        <p class="pixel-card__desc">HTML5 Canvas lets a single developer build a full game engine in
+                            JavaScript. Every game on GameZone was hand-coded — no Unity, no engine, no framework. Just
+                            raw math, pixels, and creativity.</p>
+                    </div>
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(204,0,255,0.15);border-color:rgba(204,0,255,0.4);">🕰️</div>
+                        <h3 class="pixel-card__title">Nostalgia is Powerful</h3>
+                        <p class="pixel-card__desc">Seeing a blinking sprite instantly teleports adults back to
+                            childhood arcades. Nostalgia isn't just emotional — studies show it boosts creativity,
+                            social connection, and even physical warmth. Pixels carry memories.</p>
+                    </div>
+                    <div class="pixel-card">
+                        <div class="pixel-card__icon"
+                            style="background:rgba(255,224,102,0.15);border-color:rgba(255,224,102,0.4);">🌍</div>
+                        <h3 class="pixel-card__title">Games as Culture</h3>
+                        <p class="pixel-card__desc">Video games are the defining art form of our generation. They
+                            combine music, visual art, storytelling, mathematics, and psychology. Every pixel game you
+                            play is participating in a living, global culture of creativity.</p>
+                    </div>
+                </div>
+
+                <!-- Pixel art demo block -->
+                <div class="pixel-demo">
+                    <div class="pixel-demo__label">This is a pixel-art heart rendered in pure CSS:</div>
+                    <div class="pixel-art-heart">
+                        <div class="ph-row">
+                            <span></span><span class="p"></span><span class="p"></span><span></span><span
+                                class="p"></span><span class="p"></span><span></span>
+                        </div>
+                        <div class="ph-row">
+                            <span class="p"></span><span class="p"></span><span class="p"></span><span
+                                class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>
+                        </div>
+                        <div class="ph-row">
+                            <span class="p"></span><span class="p"></span><span class="p"></span><span
+                                class="p"></span><span class="p"></span><span class="p"></span><span class="p"></span>
+                        </div>
+                        <div class="ph-row">
+                            <span></span><span class="p"></span><span class="p"></span><span class="p"></span><span
+                                class="p"></span><span class="p"></span><span></span>
+                        </div>
+                        <div class="ph-row">
+                            <span></span><span></span><span class="p"></span><span class="p"></span><span
+                                class="p"></span><span></span><span></span>
+                        </div>
+                        <div class="ph-row">
+                            <span></span><span></span><span></span><span
+                                class="p"></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="pixel-demo__label">7 × 6 grid. 24 coloured squares. Infinite feeling. <strong>That's
+                            pixel art.</strong></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             SECTION: DID YOU KNOW — GAMING FACTS
+        ═══════════════════════════════════════════════════════════════ -->
+        <section id="gaming-facts" class="info-section">
+            <div class="section-container">
+                <div class="section-tag">⚡ Mind Blown</div>
+                <h2 class="section-heading">Did You <span class="accent-neon">Know?</span></h2>
+                <p class="section-sub">Gaming is full of wild facts. Here are some that will genuinely surprise you.</p>
+
+                <div class="facts-grid">
+                    <div class="fact-card fact-card--big">
+                        <div class="fact-num">$200B</div>
+                        <div class="fact-label">Global gaming revenue in 2024</div>
+                        <p class="fact-detail">The gaming industry earns more than movies, music, and TV streaming
+                            <em>combined</em>. Every 3 seconds, someone somewhere buys a game.
+                        </p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">3.2B</div>
+                        <div class="fact-label">Gamers worldwide</div>
+                        <p class="fact-detail">Nearly 40% of humanity plays games. Gaming is more globally popular than
+                            football.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">1972</div>
+                        <div class="fact-label">Year the first console was sold</div>
+                        <p class="fact-detail">The Magnavox Odyssey — with no sound, no on-screen scoring, and plastic
+                            overlays for the TV screen.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">420M</div>
+                        <div class="fact-label">People play Candy Crush daily</div>
+                        <p class="fact-detail">King, the maker of Candy Crush, processes over 12 billion game rounds
+                            played every single day.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">70hrs</div>
+                        <div class="fact-label">Average Skyrim playtime per person</div>
+                        <p class="fact-detail">The Elder Scrolls V: Skyrim has sold 60M+ copies. More time has been
+                            spent in Skyrim than humans have existed.</p>
+                    </div>
+                    <div class="fact-card fact-card--big">
+                        <div class="fact-num">$1</div>
+                        <div class="fact-label">Salary of Nintendo's president (2013)</div>
+                        <p class="fact-detail">When Nintendo reported losses, President Satoru Iwata cut his own salary
+                            to $1. He never laid off a single employee. Gaming's most beloved CEO.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">256</div>
+                        <div class="fact-label">Colours in a pixel art palette</div>
+                        <p class="fact-detail">The original Nintendo held 256 colours total. Modern artists use limited
+                            palettes intentionally — constraint breeds creativity.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">∞</div>
+                        <div class="fact-label">Procedural levels in Minecraft</div>
+                        <p class="fact-detail">Minecraft's world is technically infinite. Walking to its "Far Lands"
+                            edge takes 820 years at normal in-game speed.</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-num">40yrs</div>
+                        <div class="fact-label">Age of the average gamer</div>
+                        <p class="fact-detail">The "gamer teen" stereotype is outdated. The average age of a gamer
+                            worldwide is 35–40, and 46% of all gamers are women.</p>
+                    </div>
+                </div>
+
+                <div class="quote-block">
+                    <div class="quote-text">"Video games are bad for you? That's what they said about rock 'n' roll."
+                    </div>
+                    <div class="quote-author">— Shigeru Miyamoto, creator of Mario, Zelda &amp; Donkey Kong</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════════
+             SECTION: HOW OUR GAMES ARE BUILT (TECH BEHIND GAMEZONE)
+        ═══════════════════════════════════════════════════════════════ -->
+        <section id="how-built" class="info-section alt-bg">
+            <div class="section-container">
+                <div class="section-tag">🔧 Behind the Code</div>
+                <h2 class="section-heading">How GameZone <span class="accent-neon">Games</span> Work</h2>
+                <p class="section-sub">Every game on this site runs on pure JavaScript and HTML5 Canvas — no engine, no
+                    framework, no plugins. Here's how it all comes together.</p>
+
+                <div class="tech-flow">
+                    <div class="tech-step">
+                        <div class="tech-step__num">01</div>
+                        <div class="tech-step__icon">📐</div>
+                        <h4 class="tech-step__title">Canvas Setup</h4>
+                        <p class="tech-step__desc">Each game gets a <code>&lt;canvas&gt;</code> element. We set its
+                            width &amp; height to fill the screen dynamically so every game is perfectly sized on any
+                            device.</p>
+                    </div>
+                    <div class="tech-arrow">→</div>
+                    <div class="tech-step">
+                        <div class="tech-step__num">02</div>
+                        <div class="tech-step__icon">🔄</div>
+                        <h4 class="tech-step__title">Game Loop</h4>
+                        <p class="tech-step__desc"><code>requestAnimationFrame</code> calls our loop 60 times per
+                            second. Each frame: clear canvas → update physics/AI → draw everything. Silky smooth at 60
+                            FPS.</p>
+                    </div>
+                    <div class="tech-arrow">→</div>
+                    <div class="tech-step">
+                        <div class="tech-step__num">03</div>
+                        <div class="tech-step__icon">🎮</div>
+                        <h4 class="tech-step__title">Input System</h4>
+                        <p class="tech-step__desc">Keyboard events track which keys are held down. Touch events map to
+                            virtual buttons for mobile. One input system handles both — every game works on phone
+                            <em>and</em> desktop.
+                        </p>
+                    </div>
+                    <div class="tech-arrow">→</div>
+                    <div class="tech-step">
+                        <div class="tech-step__num">04</div>
+                        <div class="tech-step__icon">✨</div>
+                        <h4 class="tech-step__title">Particles &amp; Glow</h4>
+                        <p class="tech-step__desc">Visual effects use <code>ctx.shadowBlur</code> for neon glow, and
+                            particle arrays that burst on events. Hundreds of tiny dots flying out from explosions — all
+                            pure math.</p>
+                    </div>
+                </div>
+
+                <div class="code-showcase">
+                    <div class="code-header">
+                        <span class="code-dot red"></span>
+                        <span class="code-dot yellow"></span>
+                        <span class="code-dot green"></span>
+                        <span class="code-title">game-loop.js — The heartbeat of every game</span>
+                    </div>
+                    <pre class="code-body"><code><span class="c-keyword">function</span> <span class="c-fn">loop</span>() {
+  <span class="c-comment">// 1. Update physics &amp; game state</span>
+  ball.x += ball.vx;
+  ball.y += ball.vy;
+  ball.vy += GRAVITY;
+
+  <span class="c-comment">// 2. Draw everything</span>
+  ctx.<span class="c-fn">clearRect</span>(<span class="c-num">0</span>, <span class="c-num">0</span>, canvas.width, canvas.height);
+  ctx.shadowBlur = <span class="c-num">20</span>;
+  ctx.shadowColor = <span class="c-str">'#00ffcc'</span>;
+  ctx.<span class="c-fn">arc</span>(ball.x, ball.y, <span class="c-num">12</span>, <span class="c-num">0</span>, Math.PI * <span class="c-num">2</span>);
+  ctx.<span class="c-fn">fill</span>();
+
+  <span class="c-comment">// 3. Schedule next frame (60× per second)</span>
+  <span class="c-fn">requestAnimationFrame</span>(loop);
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">🎮 GAME<span class="logo-accent">ZONE</span></div>
+                <p class="footer-text">All games are built with pure HTML5 Canvas & JavaScript. Free to play, forever.
+                </p>
+                <div class="footer-links">
+                    <a href="#games">All Games</a>
+                    <a href="#runners">Runners</a>
+                    <a href="#arcade">Arcade</a>
+                    <a href="#puzzle">Puzzle</a>
+                </div>
+                <p class="footer-copy">© 2026 GameZone. Play On.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- GAME MODAL -->
+    <div id="game-modal" class="game-modal">
+        <div class="modal-header">
+            <h2 id="modal-game-title" class="modal-title">Game</h2>
+            <div class="modal-controls">
+                <span id="modal-score" class="modal-score">Score: 0</span>
+                <button id="modal-info-toggle" class="modal-toggle-btn" title="How To Play">📖 HOW TO PLAY</button>
+                <button id="modal-close" class="modal-close" onclick="closeGame()">✕</button>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="game-container">
+                <canvas id="game-canvas"></canvas>
+                <div id="game-ui-overlay" class="game-ui-overlay">
+                    <h2 id="overlay-title">Game Title</h2>
+                    <p id="overlay-message">Press PLAY to Start</p>
+                    <button id="overlay-btn" class="overlay-play-btn">▶ PLAY</button>
+                    <div id="virtual-controller" class="virtual-controller hidden">
+                        <div class="d-pad">
+                            <button class="ctrl-btn up" data-key="ArrowUp">▲</button>
+                            <div class="d-pad-horizontal">
+                                <button class="ctrl-btn left" data-key="ArrowLeft">◀</button>
+                                <button class="ctrl-btn down" data-key="ArrowDown">▼</button>
+                                <button class="ctrl-btn right" data-key="ArrowRight">▶</button>
+                            </div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="ctrl-btn b-btn" data-key="KeyB">B</button>
+                            <button class="ctrl-btn a-btn" data-key="Space">A</button>
+                        </div>
+                    </div>
+
+                    <!-- HOW TO PLAY PAUSE PANEL — shown when 📖 HOW TO PLAY is clicked -->
+                    <div id="howto-panel" class="howto-panel hidden">
+                        <button id="howto-close" class="howto-close-btn">✕</button>
+                        <div class="howto-inner">
+                            <div class="howto-title">📖 HOW TO PLAY</div>
+                            <p id="howto-brief" class="howto-brief"></p>
+                            <div class="howto-section">
+                                <div class="howto-label">🎯 OBJECTIVE</div>
+                                <ul id="howto-objectives" class="howto-list"></ul>
+                            </div>
+                            <div class="howto-section">
+                                <div class="howto-label">🎮 CONTROLS</div>
+                                <div id="howto-controls" class="howto-controls-grid"></div>
+                            </div>
+                            <div class="howto-tip">⏸ Game is paused — close this to continue playing!</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="game-sidebar" class="game-sidebar">
+                    <div class="sidebar-header">MISSION BRIEF</div>
+                    <div class="sidebar-content">
+                        <p id="match-brief" class="match-brief">...</p>
+
+                        <div class="sidebar-section">
+                            <h4><span class="icon">🎯</span> OBJECTIVE</h4>
+                            <ul id="objective-list" class="objective-list">
+                                <li>Loading...</li>
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section">
+                            <h4><span class="icon">🎮</span> CONTROLS</h4>
+                            <div id="controls-grid" class="controls-grid">
+                                <!-- Populated by JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/intro.js"></script>
+        <script src="js/audio.js"></script>
+        <script src="js/main.js"></script>
+        <script>
+            // ── Scroll-reveal for info section cards ─────────────────────────
+            (function () {
+                const revealSelectors = [
+                    '.timeline-item', '.pixel-card', '.fact-card', '.tech-step'
+                ];
+                const allEls = document.querySelectorAll(revealSelectors.join(','));
+                if (!allEls.length) return;
+                const obs = new IntersectionObserver((entries) => {
+                    entries.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.classList.add('is-visible');
+                            obs.unobserve(e.target);
+                        }
+                    });
+                }, { threshold: 0.12 });
+                allEls.forEach(el => obs.observe(el));
+            })();
+        </script>
+        <!-- Game scripts loaded dynamically -->
+</body>
+
+</html>
